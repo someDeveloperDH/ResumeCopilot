@@ -1,0 +1,33 @@
+# 웹 스크래핑
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# PDF 파싱
+pdfminer.six>=20221105
+
+# 한국어 NLP
+# konlpy는 Java(JVM) 의존성이 있어 kiwipiepy로 교체
+# kiwipiepy: C++ 기반, Java 불필요, KoNLPy와 동일한 품사 체계 사용
+kiwipiepy>=0.18.0
+kss>=4.0.0
+
+# 키워드 추출
+keybert>=0.8.0
+
+# 유사도 측정
+scikit-learn>=1.3.0
+rank-bm25>=0.2.2
+sentence-transformers>=2.2.2
+
+# AI 기여도 분석
+python-Levenshtein>=0.23.0
+transformers>=4.35.0
+torch>=2.0.0
+
+# LLM 재구성 (로컬 Ollama 방식으로 교체 — anthropic 패키지 불필요)
+# Ollama 설치: curl -fsSL https://ollama.com/install.sh | sh
+# 모델 다운로드: ollama pull exaone3.5:7.8b
+
+# CLI
+click>=8.1.0
+rich>=13.0.0

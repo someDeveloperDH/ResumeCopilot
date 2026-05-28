@@ -1,0 +1,39 @@
+# logs (push 제외)
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model / large binary
+*.bin
+*.pt
+*.onnx
+*.safetensors
+
+# Output files (keep architecture.png, exclude runtime outputs)
+output_cover.txt

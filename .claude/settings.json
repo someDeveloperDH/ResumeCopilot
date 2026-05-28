@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport json, sys\nd = json.load(sys.stdin)\nf = d.get('tool_input', {}).get('file_path') or d.get('tool_input', {}).get('path') or ''\nif f and not f.endswith('/logs/changelog.md'):\n    print(json.dumps({'hookSpecificOutput': {'hookEventName': 'PostToolUse', 'additionalContext': f'[changelog reminder] {f} 파일이 변경되었습니다. /home/killy/School/NLP/test1/logs/changelog.md를 6하원칙(누가/언제/어디서/무엇을/왜/어떻게) + 대안 비교 + 선택 이유 + 해결 여부 형식으로 반드시 업데이트하세요.'}}}))\n\" 2>/dev/null || true",
+            "timeout": 10,
+            "statusMessage": "changelog 업데이트 확인 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
