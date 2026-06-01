@@ -75,20 +75,41 @@ class Aggregator:
         )
 
         # BM25 평균 (overall 계산용)
-        bm25_avg = sum(b_scores.values()) / len(b_scores) if b_scores else 0.0
+        # bm25_avg = sum(b_scores.values()) / len(b_scores) if b_scores else 0.0
 
+        if b_scores:
+            bm25_min = min(b_scores.values())
+            bm25_max = max(b_scores.values())
+
+            if abs(bm25_max - bm25_min) < 1e-9:
+                bm25_norm = 0.0
+            else:
+                vals = [
+                    (v - bm25_min) / (bm25_max - bm25_min)
+                    for v in b_scores.values()
+                ]
+                bm25_norm = sum(vals) / len(vals)
+        else:
+            bm25_norm = 0.0
+
+        # overall = (
+        #     WEIGHTS['jaccard'] * j
+        #     + WEIGHTS['tfidf'] * t
+        #     + WEIGHTS['bm25'] * bm25_avg
+        #     + WEIGHTS['sbert'] * s
+        # )
         overall = (
-            WEIGHTS['jaccard'] * j
-            + WEIGHTS['tfidf'] * t
-            + WEIGHTS['bm25'] * bm25_avg
-            + WEIGHTS['sbert'] * s
+                WEIGHTS['jaccard'] * j
+                + WEIGHTS['tfidf'] * t
+                + WEIGHTS['bm25'] * bm25_norm
+                + WEIGHTS['sbert'] * s
         )
 
         # 키워드 커버리지
         cov = jaccard.coverage(self.all_keywords, para_tokens)
 
         # 누락 키워드 중 주요업무 섹션 키워드를 앞에 배치 (우선순위)
-        priority = cov['missing'][:5]
+        priority = cov['missing']
 
         urgency = 'high' if overall < 0.3 else ('medium' if overall < 0.5 else 'low')
 
@@ -105,7 +126,7 @@ class Aggregator:
             needs_rewrite=overall < REWRITE_THRESHOLD,
             jaccard_score=round(j, 3),
             tfidf_score=round(t, 3),
-            bm25_score=round(bm25_avg, 3),
+            bm25_score=round(bm25_norm, 3),
             sbert_score=round(s, 3),
         )
 

@@ -201,12 +201,22 @@ def main(cover, job, output, split_mode, keyword_method, eval_keywords):
     display.show_step_header(4, '피드백 & STAR 재구성 + 대화형 루프')
     t = time.time()
 
+    # session_result = session.run_session(
+    #     paragraphs=paragraphs,
+    #     results=results,
+    #     output_path=output,
+    #     questions=questions,   # 문항 형식 시 질문 텍스트
+    #     entities=entities,     # 경력/학력/어학 컨텍스트
+    # )
+    # _done(4, t)
+
     session_result = session.run_session(
         paragraphs=paragraphs,
         results=results,
+        aggregator= aggregator,
         output_path=output,
-        questions=questions,   # 문항 형식 시 질문 텍스트
-        entities=entities,     # 경력/학력/어학 컨텍스트
+        questions=questions,  # 문항 형식 시 질문 텍스트
+        entities=entities,  # 경력/학력/어학 컨텍스트
     )
     _done(4, t)
 
