@@ -1,11 +1,14 @@
 """
-모델 로딩 및 추론 함수 모음 - CPU 버전 + 대화 맥락 꼬리질문
+모델 로딩 및 추론 함수 모음 - CPU 버전
 
 - 질문 생성 / 꼬리질문 생성 : stage4_tail_question/models/best_cpu
   없으면 skt/kogpt2-base-v2 사용
 - 답변 분석 : stage3_multitask/models/best_cpu
   없으면 None 반환 후 CLI에서 대체값 사용
-- 꼬리질문 생성 시 conversation_context를 함께 넣어 이전 답변을 반영
+
+주의:
+- Unsloth, bitsandbytes, CUDA 사용 안 함
+- .to("cuda") 없음
 """
 
 import json
@@ -15,6 +18,7 @@ import torch.nn as nn
 from pathlib import Path
 from transformers import AutoModel, AutoTokenizer, AutoModelForCausalLM
 
+# ── 경로 ─────────────────────────────────────────────────────────────
 _ROOT             = Path(__file__).parent.parent
 STAGE14_BASE      = "skt/kogpt2-base-v2"
 STAGE14_TUNED_CPU = _ROOT / "stage4_tail_question" / "models" / "best_cpu"
@@ -33,19 +37,13 @@ SYSTEM_Q_GEN = (
 )
 SYSTEM_TAIL = (
     "당신은 IT/AI 직무 자기소개서 전문 코치입니다. "
-    "원본 질문과 지금까지의 전체 대화 맥락을 모두 참고해 다음 꼬리질문 하나만 생성하세요. "
-    "이미 답한 내용을 반복해서 묻지 말고, 모순되거나 부족한 부분을 구체적으로 파고드세요. "
-    "Yes/No로 답할 수 없어야 하며, 반드시 한국어 질문 한 문장으로 작성하세요."
-)
-
-SYSTEM_CONSISTENCY = (
-    "당신은 IT/AI 자기소개서 면접관입니다. "
-    "지금까지의 답변들을 비교하여 역할, 책임, 의사결정 권한, 개인 기여도 측면에서 "
-    "서로 충돌하거나 면접에서 추가 확인이 필요한 부분을 검사하세요. "
-    "모순이 없으면 status=양호로 판단하세요. 반드시 한국어로 간결하게 작성하세요."
+    "질문, 답변, 의도 반영도, 적합 직무를 바탕으로 "
+    "사용자가 더 구체적인 경험을 작성할 수 있도록 꼬리질문 하나를 생성하세요. "
+    "Yes/No로 답할 수 없어야 하며, 반드시 한국어로 작성하세요."
 )
 
 
+# ── Stage 3 모델 구조 ─────────────────────────────────────────────────
 class _MultiTaskModel(nn.Module):
     """intent_score 회귀 + suitable_job 분류"""
 
@@ -62,6 +60,7 @@ class _MultiTaskModel(nn.Module):
         return self.reg_head(cls).squeeze(-1), self.cls_head(cls)
 
 
+# ── Stage 3 래퍼 ─────────────────────────────────────────────────────
 class AnalysisModel:
     """답변 분석 모델 래퍼"""
 
@@ -93,6 +92,7 @@ class AnalysisModel:
         return score, job
 
 
+# ── 로더 ─────────────────────────────────────────────────────────────
 def _fix_tokenizer(tokenizer):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -146,6 +146,7 @@ def load_analysis_model(use_finetuned: bool = True) -> AnalysisModel | None:
     return AnalysisModel(model, tokenizer, cfg, DEVICE)
 
 
+# ── 추론 함수 ─────────────────────────────────────────────────────────
 def generate_question(model, tokenizer, competency: str) -> str:
     prompt = (
         f"{SYSTEM_Q_GEN}\n"
@@ -161,83 +162,24 @@ def generate_question(model, tokenizer, competency: str) -> str:
 
 def generate_tail_question(
     model, tokenizer,
-    question: str,
-    answer: str,
-    intent_score: float,
-    job: str,
-    conversation_context: str = "",
-    consistency_note: str = "",
+    question: str, answer: str,
+    intent_score: float, job: str,
 ) -> str:
-    """전체 대화 맥락을 반영해 꼬리질문 생성."""
-    context_block = conversation_context.strip() or f"[최초 답변]\n{answer}"
-    note_block = f"\n[일관성 검사 메모]\n{consistency_note}\n" if consistency_note else ""
     prompt = (
         f"{SYSTEM_TAIL}\n"
         f"[TASK:tail_question]\n"
-        f"원본 질문: {question}\n"
-        f"현재 의도 반영도: {intent_score:.0f}\n"
-        f"현재 적합 직무: {job}\n"
-        f"\n[지금까지의 전체 대화]\n{context_block}\n"
-        f"{note_block}"
-        f"\n위 내용을 바탕으로 다음에 물어볼 꼬리질문 한 개만 작성하세요.\n"
+        f"question: {question}\n"
+        f"answer: {answer}\n"
+        f"intent_score: {intent_score:.0f}\n"
+        f"job: {job}\n"
         f"답변:"
     )
     text = _generate(model, tokenizer, prompt, max_new_tokens=70)
     text = _clean_generated(text)
     if not text:
-        text = "지금까지의 답변을 기준으로 본인이 직접 판단하고 행동한 부분을 더 구체적으로 설명해 주실 수 있나요?"
+        text = "그 경험에서 본인이 직접 맡은 역할과 판단 과정을 더 구체적으로 설명해 주실 수 있나요?"
     return text
 
-
-
-def assess_consistency(
-    model,
-    tokenizer,
-    conversation_context: str,
-    latest_answer: str,
-) -> dict:
-    """생성 모델을 Judge처럼 사용해 대화 일관성을 검사한다."""
-    prompt = (
-        f"{SYSTEM_CONSISTENCY}\n"
-        f"[TASK:consistency_check]\n"
-        f"[지금까지의 전체 대화]\n{conversation_context.strip()}\n\n"
-        f"[가장 최근 답변]\n{latest_answer.strip()}\n\n"
-        f"아래 형식으로만 답하세요.\n"
-        f"상태: 양호 또는 주의\n"
-        f"문제: 없으면 없음, 있으면 한 문장\n"
-        f"보완질문: 없으면 없음, 있으면 면접관이 물을 추가 질문 한 문장\n"
-        f"답변:"
-    )
-    raw = _generate(model, tokenizer, prompt, max_new_tokens=90)
-    text = raw.strip()
-
-    # 아주 작은 모델은 형식을 잘 못 지킬 수 있어, 파싱 실패 시에도 안전하게 기록한다.
-    status = "주의" if any(k in text for k in ["주의", "모순", "충돌", "다릅니다", "불일치", "확인"]) else "양호"
-    issue = ""
-    followup = ""
-    for line in text.splitlines():
-        line = line.strip()
-        if line.startswith("상태") and "주의" in line:
-            status = "주의"
-        elif line.startswith("문제"):
-            issue = line.split(":", 1)[-1].strip() if ":" in line else line
-        elif line.startswith("보완질문"):
-            followup = line.split(":", 1)[-1].strip() if ":" in line else line
-
-    if not issue and status == "주의":
-        issue = _clean_generated(text) or text[:120]
-    if issue in ["없음", "없습니다", "없음."]:
-        issue = ""
-    if followup in ["없음", "없습니다", "없음."]:
-        followup = ""
-
-    return {
-        "status": status,
-        "issues": [issue] if issue else [],
-        "suggestions": [followup] if followup else [],
-        "raw_judge_output": text,
-        "method": "llm_judge",
-    }
 
 def _generate(model, tokenizer, prompt: str, max_new_tokens: int = MAX_NEW_TOKENS) -> str:
     inputs = tokenizer(
@@ -271,6 +213,7 @@ def _clean_generated(text: str) -> str:
     text = text.replace("<|endoftext|>", "").strip()
     text = re.split(r"\n|답변:|질문:", text)[0].strip()
     text = text.strip(" -:：")
+    # 너무 길게 이어지면 첫 문장 수준으로 자름
     m = re.search(r"(.+?[?？])", text)
     if m:
         return m.group(1).strip()

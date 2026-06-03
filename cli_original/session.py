@@ -11,16 +11,11 @@ class Session:
     date: str = field(default_factory=lambda: datetime.now().strftime("%Y-%m-%d"))
     competency: str = ""
     question: str = ""
-    answer: str = ""          # 최초 답변
+    answer: str = ""          # 최종 답변 (꼬리질문 거친 후)
     intent_score: float = 0.0
     suitable_jobs: list = field(default_factory=list)
     conversation: list = field(default_factory=list)  # 꼬리질문 대화 이력
     final_answer: str = ""
-
-    # 추가 기능 저장 필드
-    job_history: list = field(default_factory=list)          # turn별 직무/점수 변화
-    consistency_checks: list = field(default_factory=list)   # 일관성 검사 결과
-    conversation_context: str = ""                         # 저장 시점 전체 대화 맥락
 
     def add_turn(self, tail_question: str, user_response: str):
         self.conversation.append({
@@ -28,20 +23,6 @@ class Session:
             "response": user_response,
         })
         self.final_answer = user_response
-
-    def add_job_history(self, turn: int, source: str, intent_score: float, job: str):
-        self.job_history.append({
-            "turn": turn,
-            "source": source,
-            "intent_score": round(float(intent_score), 1),
-            "job": job,
-        })
-
-    def add_consistency_check(self, turn: int, result: dict):
-        self.consistency_checks.append({
-            "turn": turn,
-            **result,
-        })
 
     def to_dict(self) -> dict:
         return asdict(self)

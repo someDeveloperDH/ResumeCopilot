@@ -46,15 +46,8 @@ def print_history():
     print(f"{'='*55}")
     for s in sessions:
         jobs = " > ".join(s.get("suitable_jobs", []))
-        job_history = s.get("job_history", [])
-        if job_history:
-            first = job_history[0]
-            last = job_history[-1]
-            trend = f"{first.get('job')}→{last.get('job')} / {first.get('intent_score')}→{last.get('intent_score')}"
-        else:
-            trend = "-"
         print(f"  [{s['date']}] [{s['competency']}] {s['question'][:30]}...")
-        print(f"           직무: {jobs}  intent: {s.get('intent_score', '-')}  trend: {trend}")
+        print(f"           직무: {jobs}  intent: {s.get('intent_score', '-')}")
     top = get_top_jobs()
     if top:
         print(f"\n  전체 적합 직무 TOP3: {' > '.join(top)}")

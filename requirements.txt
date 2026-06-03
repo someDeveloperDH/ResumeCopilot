@@ -18,7 +18,6 @@ pandas>=2.0.0
 transformers>=4.40.0
 peft>=0.10.0
 accelerate>=0.28.0
-bitsandbytes>=0.43.0
 
 # 평가 (evaluate.py)
 nltk>=3.8.1
