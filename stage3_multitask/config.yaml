@@ -1,0 +1,49 @@
+# ═══════════════════════════════════════════════════════════════
+# Stage 3 - Multi-task 분석 모델 학습/평가 설정
+# 모델 교체: model.name 만 변경하면 됨
+# ═══════════════════════════════════════════════════════════════
+
+model:
+  # ── 현재 사용 모델 ──────────────────────────────────────────
+  name: "answerdotai/ModernBERT-base"
+
+  # ── 대안 모델 (주석 해제 후 name에 붙여넣기) ────────────────
+  # "klue/roberta-large"          # 한국어 특화, VRAM 8GB, 높은 정확도
+  # "klue/roberta-base"           # 한국어 특화, VRAM 4GB
+  # "kykim/bert-kor-base"         # 한국어 BERT, VRAM 3GB, 경량
+  # "snunlp/KR-ELECTRA-discriminator"  # 한국어 ELECTRA
+
+  max_seq_length: 512
+
+jobs:
+  # 분류 클래스 (순서 변경 금지 — 인덱스로 매핑됨)
+  classes:
+    - backend
+    - ai_ml
+    - product
+
+train:
+  epochs: 5
+  batch_size: 8           # VRAM 부족 시 줄이기
+  learning_rate: 2.0e-5
+  val_ratio: 0.1
+  seed: 42
+
+data:
+  train_csv: "../data/stage3/train.csv"
+  test_csv:  "../data/stage3/test.csv"
+
+output:
+  dir: "./models/best"
+
+eval:
+  # Regression (intent_score) 기준값
+  mae_threshold:     10    # ≤ 이어야 PASS
+  rmse_threshold:    15    # ≤ 이어야 PASS
+  pearson_threshold: 0.80  # ≥ 이어야 PASS
+
+  # Classification (suitable_job) 기준값
+  accuracy_threshold:  0.75
+  f1_threshold:        0.70
+  precision_threshold: 0.70
+  recall_threshold:    0.70

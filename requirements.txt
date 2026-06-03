@@ -1,0 +1,44 @@
+# ── 설치 순서 주의 ─────────────────────────────────────────────────────
+# 1. PyTorch (CUDA 버전에 맞게 먼저 설치)
+#    https://pytorch.org/get-started/locally/
+#    예) pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# 2. Unsloth (Blackwell/CUDA 지원, LoRA 학습 가속)
+#    pip install unsloth
+#    또는 최신 버전:
+#    pip install "unsloth @ git+https://github.com/unslothai/unsloth.git"
+
+# ── DEV-1: Stage 1 질문 생성 모델 학습/평가 ───────────────────────────
+# 학습 (train.py)
+pyyaml>=6.0.0
+datasets>=2.18.0
+scikit-learn>=1.4.0
+trl>=0.8.6
+pandas>=2.0.0
+transformers>=4.40.0
+peft>=0.10.0
+accelerate>=0.28.0
+bitsandbytes>=0.43.0
+
+# 평가 (evaluate.py)
+nltk>=3.8.1
+rouge-score>=0.1.2
+sentence-transformers>=2.7.0
+
+# ── DEV-3: Multi-task 분석 모델 (ModernBERT) ─────────────────────────
+# torch, transformers, pandas, scikit-learn (위에서 설치됨)
+scipy>=1.13.0           # Pearson r 계산 (evaluate.py)
+
+# ── DEV-4: 꼬리질문 생성 모델 (Qwen3-8B Stage1+4 통합) ───────────────
+# unsloth, trl, sentence-transformers, nltk, rouge-score (위에서 설치됨)
+# MAX_SEQ_LEN=768 이므로 VRAM 여유 확인 필요
+
+# ── DEV-5: CLI 저장소 ────────────────────────────────────────────────
+# 표준 라이브러리만 사용 (json, os, uuid, collections)
+
+# ── 크롤러 (crawler.py) ───────────────────────────────────────────────
+# pip install playwright pandas && playwright install chromium
+playwright>=1.44.0
+# selenium (Playwright 실패 시 fallback)
+selenium>=4.21.0
+webdriver-manager>=4.0.1

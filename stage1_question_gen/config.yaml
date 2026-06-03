@@ -1,0 +1,68 @@
+# ═══════════════════════════════════════════════════════════════
+# Stage 1 - 질문 생성 모델 학습/평가 설정
+# 모델 교체: model.base_model 만 변경하면 됨
+# ═══════════════════════════════════════════════════════════════
+
+model:
+  # ── 현재 사용 모델 ──────────────────────────────────────────
+  # Unsloth 사전 양자화(bnb-4bit) → RAM 4~5GB만 필요, OOM 없음
+  base_model: "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+
+  # ── 대안 모델 (주석 해제 후 base_model에 붙여넣기) ──────────
+  # [사전 양자화 - RAM 안전]
+  # "unsloth/Qwen3-8B-unsloth-bnb-4bit"              # Qwen3-8B
+  # "unsloth/Llama-3.2-3B-Instruct-bnb-4bit"         # 3B 경량 (VRAM 3GB)
+  # [비양자화 - RAM 16GB 이상 필요, 사용 비권장]
+  # "MLP-KTLim/llama-3-Korean-Bllossom-8B"           # ❌ RAM 부족으로 OOM
+  # "beomi/Llama-3-Open-Ko-8B"                       # ❌ RAM 부족으로 OOM
+
+  load_in_4bit: true      # 4bit 양자화 (VRAM 절약)
+  max_seq_length: 768     # 최대 시퀀스 길이
+
+lora:
+  r: 16                   # LoRA rank (높을수록 표현력↑, VRAM↑)
+  alpha: 16               # LoRA scaling (보통 r과 동일하게)
+  dropout: 0.0
+  targets:                # LoRA 적용 레이어 (Llama-3 기준)
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+train:
+  epochs: 3
+  batch_size: 2           # VRAM 부족 시 1로 줄이고 grad_accumulation 늘리기
+  grad_accumulation: 4    # effective batch = batch_size × grad_accumulation
+  learning_rate: 2.0e-4
+  val_ratio: 0.1          # 전체 데이터의 10%를 검증셋으로
+  seed: 42
+
+data:
+  train_csv: "../data/stage1/train.csv"
+  test_csv:  "../data/stage1/test.csv"
+
+output:
+  dir: "./models/best"
+
+eval:
+  # 평가 기준값 (이 값 이상이어야 PASS)
+  bleu4_min:    0.15
+  bleu4_goal:   0.35
+  rouge_l_min:  0.30
+  rouge_l_goal: 0.40
+  cosine_min:   0.75
+  cosine_goal:  0.80
+  # is_valid 판정 임계값 (코사인 유사도 기준)
+  valid_threshold: 0.70
+
+  # 통합 점수 가중치 (합계 = 1.0)
+  # 코사인을 높게: 한국어 생성은 의미 유사도가 가장 신뢰도 높음
+  weights:
+    bleu4:   0.20
+    rouge_l: 0.30
+    cosine:  0.50
+  # 통합 점수 PASS 기준
+  composite_threshold: 0.60

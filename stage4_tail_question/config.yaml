@@ -1,0 +1,52 @@
+# ═══════════════════════════════════════════════════════════════
+# Stage 4 - 꼬리질문 생성 모델 학습/평가 설정 (Stage 1+4 통합)
+# Stage 1과 동일 모델을 사용하여 두 Task를 한 번에 학습
+# 모델 교체: model.base_model 만 변경 (Stage 1 config와 동일하게 맞출 것)
+# ═══════════════════════════════════════════════════════════════
+
+model:
+  # ── 현재 사용 모델 ──────────────────────────────────────────
+  base_model: "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+
+  # ── 대안 모델 (주석 해제 후 base_model에 붙여넣기) ──────────
+  # "beomi/Llama-3-Open-Ko-8B"
+  # "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+  # "unsloth/Qwen3-8B-unsloth-bnb-4bit"
+  # "Bllossom/llama-3.2-Korean-Bllossom-3B"          # VRAM 4GB 경량
+
+  load_in_4bit: true
+  max_seq_length: 768     # 꼬리질문은 context가 길어서 Stage 1보다 크게
+
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0.0
+  targets:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+train:
+  epochs: 3
+  batch_size: 2
+  grad_accumulation: 4
+  learning_rate: 2.0e-4
+  val_ratio: 0.1
+  seed: 42
+
+data:
+  stage1_csv: "../data/stage1/train.csv"       # 질문 생성 데이터
+  stage4_csv: "../data/stage4/tail_train.csv"  # 꼬리질문 생성 데이터
+  test_csv:   "../data/stage4/tail_test.csv"
+
+output:
+  dir: "./models/best"
+
+eval:
+  bleu4_threshold:  0.35
+  rouge_l_threshold: 0.40
+  cosine_threshold: 0.80
