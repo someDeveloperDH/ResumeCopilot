@@ -46,8 +46,12 @@ def print_history():
     print(f"{'='*55}")
     for s in sessions:
         jobs = " > ".join(s.get("suitable_jobs", []))
-        print(f"  [{s['date']}] [{s['competency']}] {s['question'][:30]}...")
-        print(f"           직무: {jobs}  intent: {s.get('intent_score', '-')}")
+        card = s.get("answer_card", {})
+        title = card.get("core_experience") or s.get("question", "")[:30]
+        score = card.get("after_score", s.get("intent_score", "-"))
+        input_type = s.get("input_type") or card.get("input_type", "-")
+        print(f"  [{s['date']}] [{s['competency']}] {title}...")
+        print(f"           직무: {jobs or '-'}  score: {score}  type: {input_type}")
     top = get_top_jobs()
     if top:
         print(f"\n  전체 적합 직무 TOP3: {' > '.join(top)}")

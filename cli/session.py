@@ -16,6 +16,12 @@ class Session:
     suitable_jobs: list = field(default_factory=list)
     conversation: list = field(default_factory=list)  # 꼬리질문 대화 이력
     final_answer: str = ""
+    input_type: str = ""
+    score_before: float = 0.0
+    score_after: float = 0.0
+    retry_used: bool = False
+    answer_card: dict = field(default_factory=dict)
+    versions: list = field(default_factory=list)
 
     def add_turn(self, tail_question: str, user_response: str):
         self.conversation.append({
@@ -23,6 +29,11 @@ class Session:
             "response": user_response,
         })
         self.final_answer = user_response
+
+    def set_answer_card(self, card: dict):
+        self.answer_card = card
+        self.versions = card.get("versions", [])
+        self.final_answer = card.get("final_answer", self.final_answer)
 
     def to_dict(self) -> dict:
         return asdict(self)

@@ -4,191 +4,303 @@
 실행: python cli/main.py           # 새 세션 시작
       python cli/main.py --history  # 저장 이력 조회
 
-플로우: 질문 생성 → 답변 입력(txt 파일) → 분석 → 꼬리질문 루프 → 저장
-모델 교체: USE_STAGE14_FINETUNED / USE_STAGE3_FINETUNED 플래그 변경
+main2의 학습 파이프라인은 유지하고, CLI 실행은 로컬 Ollama/EXAONE 기반
+자소서 카드 저장 흐름으로 확장한다.
 """
 
-import os
-import sys
+from __future__ import annotations
+
 import random
-import subprocess
+import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+
 import models
+from coach import (
+    build_extraction_prompt,
+    build_rewrite_prompt,
+    classify_input,
+    estimate_score,
+    is_denial,
+    load_config,
+    parse_analysis_json,
+    rule_analyze,
+    split_rewrite_response,
+    target_chars_for,
+    validate_user_dump,
+)
+from memory import print_memory_prompts, print_recommendations, recommend_cards
+from readiness import (
+    calculate_readiness,
+    mission_for,
+    print_readiness,
+    print_readiness_delta,
+    weakest_area,
+)
 from session import Session
-from storage import save_session, print_history
-
-# ── 설정 ──────────────────────────────────────────────────────────────
-USE_STAGE14_FINETUNED = False   # stage4 학습 완료 후 True
-USE_STAGE3_FINETUNED  = False   # stage3 학습 완료 후 True
-
-MAX_TAIL_TURNS = 5
-MIN_ANSWER_LEN = 30
-COMPETENCIES   = ["문제해결", "협업", "성장", "실패경험", "주도성"]
-DRAFTS_DIR     = Path(__file__).parent.parent / "storage" / "drafts"
+from storage import load_all, print_history, save_session
 
 
-# ── DEV-2: 답변 입력 (txt 파일 방식) ─────────────────────────────────
-def _open_editor(filepath: Path):
-    """우선순위: $EDITOR 환경변수 → nano → vi → 수동 안내"""
-    editor = os.environ.get("EDITOR", "")
-    candidates = [c for c in [editor, "nano", "vi"] if c]
+USE_STAGE14_FINETUNED = False
+USE_STAGE3_FINETUNED = False
+COMPETENCIES = ["문제해결", "협업", "성장", "실패경험", "주도성"]
 
-    for cmd in candidates:
-        try:
-            subprocess.run([cmd, str(filepath)], check=True)
-            return
-        except (FileNotFoundError, subprocess.CalledProcessError):
+
+def _show_question(competency: str, question: str) -> None:
+    print(f"\n{'=' * 60}")
+    print(f"오늘의 3분 미션 [{competency}]")
+    print(f"{'=' * 60}")
+    print(question)
+    print("\n이 질문이 보고 싶은 것")
+    for item in _question_intents(competency):
+        print(f"  - {item}")
+
+
+def _question_intents(competency: str) -> list[str]:
+    mapping = {
+        "문제해결": ["문제를 정의한 방식", "본인이 취한 구체적 행동", "개선 결과나 수치"],
+        "협업": ["갈등이나 조율 상황", "본인의 커뮤니케이션 방식", "팀 결과에 준 영향"],
+        "성장": ["처음 부족했던 지점", "학습/시도 과정", "이후 달라진 결과"],
+        "실패경험": ["실패 원인", "재발 방지 행동", "실패 이후 바뀐 방식"],
+        "주도성": ["스스로 발견한 문제", "먼저 제안/실행한 행동", "주변이나 결과에 준 변화"],
+    }
+    return mapping.get(competency, ["상황", "본인의 역할", "행동과 결과"])
+
+
+def _read_free_dump(cfg: dict) -> str:
+    print("\n기억나는 대로 편하게 적어주세요.")
+    print("문장 완성 안 해도 됩니다. 키워드만 적어도 됩니다.")
+    print("오늘은 완성 답변 1개 또는 소재 씨앗 1개만 저장해도 성공입니다.")
+    print("입력 종료: 빈 줄 Enter\n")
+
+    while True:
+        lines = []
+        while True:
+            line = input("> ")
+            if not line:
+                break
+            lines.append(line)
+        answer = "\n".join(lines).strip()
+
+        if is_denial(answer):
+            print_memory_prompts()
+            seed = input("> ").strip()
+            if seed:
+                return seed
             continue
 
-    # 모든 에디터 실패 시 수동 안내
-    print(f"\n  에디터를 자동으로 열 수 없습니다.")
-    print(f"  아래 파일을 직접 열어 답변을 작성하고 저장한 뒤 Enter를 눌러주세요.")
-    print(f"  {filepath}\n")
-    input("  [완료 후 Enter] ")
+        ok, message = validate_user_dump(answer, cfg)
+        if ok:
+            return answer
+        print(message)
 
 
-def _get_answer_via_file(question: str, session_id: str) -> str:
-    """
-    txt 파일을 생성하고 에디터로 열어 답변을 받음.
-    에디터를 닫으면 파일을 읽어 답변을 반환.
-    '#' 으로 시작하는 줄은 안내 주석으로 무시됨.
-    """
-    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
-    draft_path = DRAFTS_DIR / f"{session_id}_answer.txt"
+def _analyze_with_llm(question: str, competency: str, answer: str, cfg: dict):
+    fallback = rule_analyze(question, answer, cfg)
+    prompt = build_extraction_prompt(question, competency, answer, classify_input(answer, cfg))
+    runtime = cfg["runtime"]
+    if runtime.get("provider") != "ollama":
+        return fallback
 
-    template = (
-        f"# ───────────────────────────────────────────────────────\n"
-        f"# 하루 1 문답 - 답변 작성\n"
-        f"# ───────────────────────────────────────────────────────\n"
-        f"# 질문: {question}\n"
-        f"#\n"
-        f"# 안내:\n"
-        f"#   - '#' 으로 시작하는 줄은 무시됩니다.\n"
-        f"#   - 아래에 자유롭게 답변을 작성하세요.\n"
-        f"#   - 최소 {MIN_ANSWER_LEN}자 이상 작성해야 합니다.\n"
-        f"#   - 작성 완료 후 저장하고 닫으면 다음 단계로 넘어갑니다.\n"
-        f"# ───────────────────────────────────────────────────────\n"
-        f"\n"
-    )
-    draft_path.write_text(template, encoding="utf-8")
-
-    print(f"\n  답변 파일이 열립니다. 작성 후 저장하고 닫아주세요.")
-    print(f"  파일 위치: {draft_path}\n")
-
-    _open_editor(draft_path)
-
-    # 파일 읽기 — '#' 주석 줄 제거
-    raw = draft_path.read_text(encoding="utf-8")
-    lines = [l for l in raw.splitlines() if not l.strip().startswith("#")]
-    answer = "\n".join(lines).strip()
-
-    if not answer:
-        print("\n  답변이 비어 있습니다. 파일을 다시 열어 작성해주세요.\n")
-        return _get_answer_via_file(question, session_id)
-
-    if len(answer) < MIN_ANSWER_LEN:
-        print(f"\n  너무 짧습니다 (현재 {len(answer)}자, 최소 {MIN_ANSWER_LEN}자).")
-        print("  파일을 다시 열어 보완해주세요.\n")
-        return _get_answer_via_file(question, session_id)
-
-    print(f"  답변 확인 ({len(answer)}자)\n")
-    return answer
+    try:
+        raw = models.ollama_chat(prompt, runtime, json_format=True)
+    except RuntimeError as exc:
+        if runtime.get("allow_rule_fallback", True):
+            print(f"\n[안내] 로컬 LLM 분석 실패 → rule 기반으로 진행합니다. ({exc})")
+            return fallback
+        raise
+    return parse_analysis_json(raw, fallback)
 
 
-def _show_question(competency: str, question: str):
-    print(f"\n{'='*55}")
-    print(f"  오늘의 질문  [{competency}]")
-    print(f"{'='*55}")
-    print(f"  {question}")
-    print(f"{'='*55}\n")
+def _ask_one_followup(analysis) -> str:
+    if not analysis.followup_question:
+        return ""
+    print("\n부족한 핵심 정보 1개만 보강해 주세요.")
+    print(analysis.followup_question)
+    return input("> ").strip()
 
 
-def _show_analysis(intent_score: float, job: str):
-    bar = "█" * int(intent_score / 10) + "░" * (10 - int(intent_score / 10))
-    print(f"\n  분석 결과")
-    print(f"  의도 반영도 [{bar}] {intent_score:.0f}/100")
-    print(f"  적합 직무   {job}\n")
+def _rewrite_with_llm(question: str, competency: str, original: str, analysis, followup: str, cfg: dict) -> tuple[str, list[str]]:
+    runtime = cfg["runtime"]
+    target_chars = target_chars_for(analysis.input_type, cfg)
+    prompt = build_rewrite_prompt(question, competency, original, analysis, followup, target_chars)
+
+    if runtime.get("provider") != "ollama":
+        return _rule_rewrite(original, analysis, followup), analysis.improvement_summary
+
+    try:
+        raw = models.ollama_chat(prompt, runtime, json_format=False)
+    except RuntimeError as exc:
+        if runtime.get("allow_rule_fallback", True):
+            print(f"\n[안내] 로컬 LLM 재작성 실패 → rule 기반 문단으로 진행합니다. ({exc})")
+            return _rule_rewrite(original, analysis, followup), analysis.improvement_summary
+        raise
+    return split_rewrite_response(raw, analysis.improvement_summary)
 
 
-def _show_summary(session: Session, path: str):
-    print(f"\n{'='*55}")
-    print(f"  저장 완료!")
-    print(f"  날짜        : {session.date}")
-    print(f"  역량        : {session.competency}")
-    print(f"  적합 직무   : {' > '.join(session.suitable_jobs)}")
-    print(f"  의도 반영도 : {session.intent_score:.0f}/100")
-    print(f"  저장 위치   : {path}")
-    print(f"{'='*55}\n")
+def _rule_rewrite(original: str, analysis, followup: str) -> str:
+    if analysis.input_type == "seed":
+        return f"{analysis.core_experience} 경험을 자소서 소재로 저장했습니다. 추후 상황, 행동, 결과를 보강해 완성 문단으로 확장할 수 있습니다."
+
+    parts = []
+    if analysis.situation:
+        parts.append(analysis.situation)
+    if analysis.task:
+        parts.append(f"이 과정에서 저는 {analysis.task}")
+    if analysis.action:
+        parts.append(f"{analysis.action}을 중심으로 문제를 해결했습니다.")
+    if followup:
+        parts.append(f"추가로 {followup}")
+    if analysis.result:
+        parts.append(f"그 결과 {analysis.result}라는 성과를 만들었습니다.")
+    if not parts:
+        parts.append(original)
+    return " ".join(parts)
 
 
-def _fallback_analysis() -> tuple[float, str]:
-    """stage3 미준비 시 대체값 반환"""
-    print("  [분석 건너뜀] stage3 모델 학습 후 USE_STAGE3_FINETUNED = True 로 교체")
-    return 50.0, random.choice(["backend", "ai_ml", "product"])
+def _maybe_retry(question: str, competency: str, original: str, analysis, rewritten: str, score_before: float, score_after: float, cfg: dict):
+    threshold = cfg["interviewer"]["retry_delta_threshold"]
+    if score_after - score_before >= threshold * 100:
+        return rewritten, score_after, False
+
+    print(f"\n재평가 결과: 부합도 {score_before:.0f} -> {score_after:.0f} (상승폭 미미)")
+    print("입력하신 답변에 역량을 증명할 구체적인 도구나 정량적 수치가 부족할 수 있습니다.")
+    print("[y] 그냥 수락  [r] 한 번만 보충  [s] 원문 저장")
+    choice = input("선택 (y/r/s): ").strip().lower() or "y"
+    if choice == "s":
+        return original, score_before, False
+    if choice != "r":
+        return rewritten, score_after, False
+
+    extra = _ask_one_followup(analysis)
+    retry_text, summary = _rewrite_with_llm(question, competency, original, analysis, extra, cfg)
+    retry_score = estimate_score(question, retry_text, analysis)
+    analysis.improvement_summary = summary
+    return retry_text, retry_score, True
 
 
-# ── 세션 플로우 ───────────────────────────────────────────────────────
-def run_session(gen_model, gen_tokenizer, analysis: models.AnalysisModel | None):
-    session    = Session()
+def _build_card(session: Session, original: str, rewritten: str, analysis, score_before: float, score_after: float, summary: list[str]) -> dict:
+    return {
+        "question": session.question,
+        "core_experience": analysis.core_experience,
+        "input_type": analysis.input_type,
+        "star": {
+            "situation": analysis.situation,
+            "task": analysis.task,
+            "action": analysis.action,
+            "result": analysis.result,
+        },
+        "tools": analysis.tools,
+        "metrics": analysis.metrics,
+        "competencies": sorted(set([session.competency] + analysis.reuse_angles)),
+        "before_score": round(score_before, 1),
+        "after_score": round(score_after, 1),
+        "final_answer": rewritten,
+        "improvement_summary": summary[:3],
+        "versions": [
+            {"type": "original", "text": original},
+            {"type": "rewritten", "text": rewritten},
+        ],
+        "reuse_angles": analysis.reuse_angles,
+        "source_cards": analysis.source_cards,
+    }
+
+
+def _print_card_result(card: dict) -> None:
+    print("\n자소서 카드 저장 내용")
+    print(f"  핵심 경험: {card['core_experience']}")
+    print(f"  입력 타입: {card['input_type']}")
+    if card["tools"]:
+        print(f"  기술/도구: {', '.join(card['tools'])}")
+    if card["metrics"]:
+        print(f"  수치/성과: {', '.join(card['metrics'])}")
+    print(f"  점수 변화: {card['before_score']:.0f} -> {card['after_score']:.0f}")
+    print("\n개선 요약")
+    for item in card.get("improvement_summary", [])[:3]:
+        print(f"  - {item}")
+
+
+def _show_summary(session: Session, path: str) -> None:
+    print(f"\n{'=' * 60}")
+    print("저장 완료")
+    print(f"날짜      : {session.date}")
+    print(f"역량      : {session.competency}")
+    print(f"저장 위치 : {path}")
+    print(f"{'=' * 60}\n")
+
+
+def run_session(gen_model, gen_tokenizer, analysis_model: models.AnalysisModel | None):
+    cfg = load_config()
+    stored = load_all()
+    readiness_before = calculate_readiness(stored)
+
+    if cfg["dashboard"].get("show_readiness_map", True):
+        print_readiness("현재 자소서 준비도", readiness_before)
+        area = weakest_area(readiness_before)
+        print(f"\n오늘 추천 미션: {mission_for(area)}")
+
+    session = Session()
     competency = random.choice(COMPETENCIES)
-
-    # DEV-1: 질문 생성
-    question           = models.generate_question(gen_model, gen_tokenizer, competency)
+    question = models.generate_question(gen_model, gen_tokenizer, competency)
     session.competency = competency
-    session.question   = question
+    session.question = question
+
     _show_question(competency, question)
+    if cfg["memory"].get("enable_semantic_search", True):
+        cards = recommend_cards(question, stored, cfg["memory"].get("max_recommendations", 3))
+        print_recommendations(cards)
 
-    # DEV-2: 답변 입력 (txt 파일 → 에디터 → 저장 후 닫으면 진행)
-    answer         = _get_answer_via_file(question, session.session_id)
-    session.answer = answer
+    original = _read_free_dump(cfg)
+    session.answer = original
 
-    # DEV-3: 초기 분석
-    if analysis:
-        intent_score, job = analysis.predict(question, answer)
+    coach_analysis = _analyze_with_llm(question, competency, original, cfg)
+    session.input_type = coach_analysis.input_type
+
+    score_before = estimate_score(question, original, coach_analysis)
+    followup = ""
+    if coach_analysis.input_type != "seed":
+        followup = _ask_one_followup(coach_analysis)
+
+    rewritten, summary = _rewrite_with_llm(question, competency, original, coach_analysis, followup, cfg)
+    score_after = estimate_score(question, rewritten, coach_analysis)
+    rewritten, score_after, retry_used = _maybe_retry(
+        question, competency, original, coach_analysis, rewritten, score_before, score_after, cfg
+    )
+
+    if analysis_model:
+        score_after, job = analysis_model.predict(question, rewritten)
     else:
-        intent_score, job = _fallback_analysis()
+        job = _guess_job(coach_analysis)
 
-    session.intent_score  = intent_score
+    session.score_before = round(score_before, 1)
+    session.score_after = round(score_after, 1)
+    session.intent_score = round(score_after, 1)
+    session.retry_used = retry_used
     session.suitable_jobs = [job]
-    _show_analysis(intent_score, job)
+    session.final_answer = rewritten
+    session.add_turn(coach_analysis.followup_question, followup)
 
-    # DEV-4: 꼬리질문 루프
-    current = answer
-    for turn in range(1, MAX_TAIL_TURNS + 1):
-        tail_q = models.generate_tail_question(
-            gen_model, gen_tokenizer,
-            question, current, intent_score, job,
-        )
-        print(f"꼬리질문 [{turn}/{MAX_TAIL_TURNS}]: {tail_q}\n> ", end="")
-        reply = input().strip()
-        if not reply:
-            break
+    card = _build_card(session, original, rewritten, coach_analysis, score_before, score_after, summary)
+    session.set_answer_card(card)
+    _print_card_result(card)
 
-        session.add_turn(tail_q, reply)
-        current = reply
-
-        if analysis:
-            intent_score, job = analysis.predict(question, current)
-        else:
-            intent_score, job = _fallback_analysis()
-
-        if job not in session.suitable_jobs:
-            session.suitable_jobs.append(job)
-        session.intent_score = intent_score
-        _show_analysis(intent_score, job)
-
-        if input("저장하고 종료? (y/n): ").strip().lower() == "y":
-            break
-
-    # DEV-5: 저장
-    session.final_answer = current
     path = save_session(session.to_dict())
+    readiness_after = calculate_readiness(load_all())
+    if cfg["dashboard"].get("show_readiness_map", True):
+        print_readiness_delta(readiness_before, readiness_after)
     _show_summary(session, path)
 
 
-# ── 진입점 ────────────────────────────────────────────────────────────
+def _guess_job(analysis) -> str:
+    tools = {tool.lower() for tool in analysis.tools}
+    if tools & {"sql", "pandas", "numpy", "python"}:
+        return "ai_ml"
+    if tools & {"node.js", "java", "spring", "api", "docker", "mysql"}:
+        return "backend"
+    return "product"
+
+
 def main():
     if "--history" in sys.argv:
         print_history()
@@ -196,8 +308,7 @@ def main():
 
     print("\n모델 로딩 중...")
     gen_model, gen_tokenizer = models.load_generation_model(USE_STAGE14_FINETUNED)
-    analysis                 = models.load_analysis_model(USE_STAGE3_FINETUNED)
-
+    analysis = models.load_analysis_model(USE_STAGE3_FINETUNED)
     run_session(gen_model, gen_tokenizer, analysis)
 
 

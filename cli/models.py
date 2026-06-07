@@ -6,11 +6,17 @@
 """
 
 import json
+import urllib.error
+import urllib.request
 import torch
 import torch.nn as nn
 from pathlib import Path
 from transformers import AutoModel, AutoTokenizer
-from unsloth import FastLanguageModel
+
+try:
+    from unsloth import FastLanguageModel
+except ImportError:  # Mac 로컬 CLI는 Ollama provider를 사용하므로 Unsloth가 없어도 실행 가능해야 함.
+    FastLanguageModel = None
 
 # ── 경로 ─────────────────────────────────────────────────────────────
 _ROOT          = Path(__file__).parent.parent
@@ -84,6 +90,10 @@ class AnalysisModel:
 # ── 로더 ─────────────────────────────────────────────────────────────
 def load_generation_model(use_finetuned: bool = False):
     """Qwen3-8B 로드. use_finetuned=True 시 stage4 fine-tuned 모델 사용."""
+    if FastLanguageModel is None:
+        print("  [생성 모델] Unsloth 미설치 → CLI 로컬 Ollama provider 사용")
+        return None, None
+
     model_path = str(STAGE14_TUNED) if use_finetuned else STAGE14_BASE
     label      = "Fine-tuned (Stage1+4)" if use_finetuned else "Base Qwen3-8B"
     print(f"  [생성 모델] {label}")
@@ -125,6 +135,16 @@ def load_analysis_model(use_finetuned: bool = False) -> AnalysisModel | None:
 
 # ── 추론 함수 ─────────────────────────────────────────────────────────
 def generate_question(model, tokenizer, competency: str) -> str:
+    if model is None or tokenizer is None:
+        samples = {
+            "문제해결": "기술적 문제를 발견하고 해결한 경험을 구체적으로 설명하세요.",
+            "협업": "팀 프로젝트에서 의견 차이를 조율하며 성과를 만든 경험을 설명하세요.",
+            "성장": "처음 접한 기술이나 환경을 학습해 실제 결과로 연결한 경험을 설명하세요.",
+            "실패경험": "실패나 실수를 겪은 뒤 재발을 막기 위해 개선한 경험을 설명하세요.",
+            "주도성": "스스로 문제를 발견하고 먼저 제안하거나 실행한 경험을 설명하세요.",
+        }
+        return samples.get(competency, "IT/AI 직무 역량을 보여줄 수 있는 경험을 설명하세요.")
+
     prompt = (
         f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
         f"{SYSTEM_Q_GEN}<|eot_id|>"
@@ -140,6 +160,12 @@ def generate_tail_question(
     question: str, answer: str,
     intent_score: float, job: str,
 ) -> str:
+    if model is None or tokenizer is None:
+        return (
+            "이 경험에서 사용한 구체적인 기술이나 결과 수치를 하나만 더 설명해 주세요. "
+            "정확한 기술이 없다면 비슷한 도구, 자동화 방식, 협업 방식도 좋습니다."
+        )
+
     prompt = (
         f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
         f"{SYSTEM_TAIL}<|eot_id|>"
@@ -169,3 +195,35 @@ def _generate(model, tokenizer, prompt: str, max_new_tokens: int = 256) -> str:
     return tokenizer.decode(
         output[0][inputs.input_ids.shape[1]:], skip_special_tokens=True
     ).strip()
+
+
+# ── Ollama 로컬 LLM provider ─────────────────────────────────────────
+def ollama_chat(prompt: str, runtime_cfg: dict, *, json_format: bool = False) -> str:
+    """Ollama generate API를 통해 로컬 LLM을 호출한다.
+
+    exaone3.5:7.8b는 현재 Ollama에서 completion capability로 노출되므로
+    /api/chat 대신 /api/generate를 사용한다.
+    """
+    base_url = runtime_cfg.get("base_url", "http://localhost:11434").rstrip("/")
+    url = f"{base_url}/api/generate"
+    payload = {
+        "model": runtime_cfg.get("model", "exaone3.5:7.8b"),
+        "prompt": prompt,
+        "stream": False,
+        "options": {
+            "temperature": runtime_cfg.get("temperature", 0.2),
+            "num_predict": runtime_cfg.get("max_tokens", 900),
+        },
+    }
+    if json_format:
+        payload["format"] = "json"
+
+    data = json.dumps(payload).encode("utf-8")
+    request = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(request, timeout=runtime_cfg.get("timeout_seconds", 120)) as response:
+            body = json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"Ollama 호출 실패: {exc}") from exc
+
+    return body.get("response", "").strip()
