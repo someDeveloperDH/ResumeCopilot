@@ -14,7 +14,7 @@ jobs:
     - product
 
 train:
-  epochs: 5
+  epochs: 10
   batch_size: 4
   learning_rate: 5.0e-5
   val_ratio: 0.1

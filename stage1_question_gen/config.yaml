@@ -4,10 +4,10 @@
 model:
   base_model: "skt/kogpt2-base-v2"   # 약 125M급 한국어 GPT-2 계열. CPU에서 실행 가능하지만 느릴 수 있음.
   max_seq_length: 256
-  max_new_tokens: 64
+  max_new_tokens: 80
 
 train:
-  epochs: 1
+  epochs: 5
   batch_size: 1
   grad_accumulation: 8
   learning_rate: 5.0e-5
