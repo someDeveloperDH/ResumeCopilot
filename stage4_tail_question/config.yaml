@@ -1,0 +1,39 @@
+# Stage 4 CPU 버전 - Stage 1 질문 생성 + Stage 4 꼬리질문 생성 통합
+# 기존 Unsloth/8B/CUDA 대신 HuggingFace Transformers + 작은 KoGPT2 사용
+
+#model:
+#  base_model: "skt/kogpt2-base-v2"
+#  max_seq_length: 128
+#  max_new_tokens: 40
+#
+#train:
+#  epochs: 1
+#  batch_size: 1
+#  learning_rate: 5.0e-5
+#  val_ratio: 0.1
+#  seed: 42
+#  max_samples: 30
+
+model:
+  base_model: "skt/kogpt2-base-v2"
+  max_seq_length: 1024
+  max_new_tokens: 80
+
+train:
+  epochs: 25
+  batch_size: 4
+  learning_rate: 5.0e-5
+  val_ratio: 0.1
+  seed: 42
+  max_samples: 0
+
+data:
+  stage1_csv: "../data/stage1/train.csv"
+  stage4_csv: "../data/stage4/tail_train.csv"
+  test_csv:   "../data/stage4/tail_test.csv"
+
+output:
+  dir: "./models/best_cpu"
+
+eval:
+  cosine_threshold: 0.60

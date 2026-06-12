@@ -1,0 +1,501 @@
+﻿question_id,question,url,competency
+Q001,"다른 지원자와 차별화되는 본인만의 강점을 한가지 선택하여, 이를 신한은행에서 어떻게 발휘할 수 있을지 작성해 주세요. [한 번의 결과보다, 다음 선택] 저의 강점은 실패를 한 번의 좌절로 끝내지 않고, 다음 도전의 발판으로 바꾸는 회복탄력성입니다. 저는 목",https://linkareer.com/cover-letter/30005,failure
+Q002,KT 및 해당 직무에 지원한 동기와 KT 입사 후 해당 직무의 전문가로 성장하기 위해 어떤 노력을 할 것인지 구체적으로 기술해 주십시오. (최대 500자 입력가능),https://linkareer.com/cover-letter/30005,motivation
+Q003,"최근 3년 내 가장 어려웠던 도전은 무엇이었으며, 그 경험을 통해 무엇을 배웠는지 기술해 주십시오. (최대 500자 입력가능)",https://linkareer.com/cover-letter/30005,failure
+Q004,"공동의 목표 달성을 위한 협업 경험을 본인이 수행한 역할 중심으로 제시하고, 그 경험을 통해 무엇을 얻었는지 기술해 주십시오. (최대 500자 입력가능)",https://linkareer.com/cover-letter/30005,teamwork
+Q005,"지원 직무와 관련된 주요 연구/업무경험 및 보유역량(skill)에 대해 구체적으로 기술해 주십시오. (최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30005,job_competency
+Q006,삼성전자를 지원한 이유와 입사 후 회사에서 이루고 싶은 꿈을 기술하십시오. 700자 (영문작성 시 1400자) 이내,https://linkareer.com/cover-letter/30009,motivation
+Q007,"본인의 성장과정을 간략히 기술하되 현재의 자신에게 가장 큰 영향을 끼친 사건, 인물 등을 포함하여 기술하시기 바랍니다. (* 작품 속 가상인물도 가능) 1500자 (영문작성 시 3000자) 이내",https://linkareer.com/cover-letter/30009,growth_values
+Q008,최근 사회이슈 중 중요하다고 생각되는 한가지를 선택하고 이에 관한 자신의 견해를 기술해 주시기 바랍니다. 1000자 (영문작성 시 2000자) 이내,https://linkareer.com/cover-letter/30009,social_view
+Q009,"프로그램 개발, 알고리즘 풀이 등 SW개발 관련 경험 중 가장 어려웠던 경험과 해결방안에 대해 구체적으로 서술하여 주시기 바랍니다. (과제 개요, 어려웠던 점, 해결방법, 결과 포함) 1000자 (영문작성 시 2000자) 이내",https://linkareer.com/cover-letter/30009,failure
+Q010,"지원동기(회사/직무) 및 입사 후 목표에 대하여 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,motivation
+Q011,"본인의 장/단점과 입사 후 장점은 어떻게 활용되고, 단점은 어떻게 보완할 것인지에 대하여 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,personality
+Q012,"최근 국내외 이슈 중 관심 있는 한가지에 대해 본인의 의견을 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,social_view
+Q013,"함께 해야 하는 일에서 팀워크를 발휘하고 목표달성을 위해 본인이 수행한 역할 및 경험에 대해 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,teamwork
+Q014,"지원 분야와 관련한 전문성 및 역량을 키우기 위해 본인이 했던 노력이나 경험을 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,job_competency
+Q015,"도전적인 목표를 세우고 이를 달성하기 위해 끈질기게 노력하여 성취한 경험에 대하여 기재해 주시기 바랍니다. (최소 300자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30010,challenge
+Q016,"전공과 관련하여, 인턴십, 팀/개인 프로젝트 등에서 도전적인 목표를 설정하여 이를 성취하거나 혹은 실패하였던 경험을 구체적으로 기술하시고, 이러한 경험을 통해 무엇을 배웠는지 기술하여 주십시오.(800자)",https://linkareer.com/cover-letter/30013,failure
+Q017,"한온시스템의 인턴으로 입사할 경우, 인턴기간 동안 무엇을 기대하며 어떤 기회가 될 수 있을지 기술하여 주십시오.(800자)",https://linkareer.com/cover-letter/30013,motivation
+Q018,오늘날의 자신이 어떤 배경을 통해 성장하였는지 기술하여 주십시오.(800자),https://linkareer.com/cover-letter/30013,growth_values
+Q019,지원동기 및 입사 후 포부,https://linkareer.com/cover-letter/30020,motivation
+Q020,성장과정,https://linkareer.com/cover-letter/30020,growth_values
+Q021,직무역량,https://linkareer.com/cover-letter/30020,job_competency
+Q022,자동차 산업의 변화에 대비하여 현대자동차가 나아가야 할 방향에 대한 자신의 생각을 서술해 주십시오. 600,https://linkareer.com/cover-letter/30035,social_view
+Q023,"본인이 지원한 직무를 한 가지 키워드로 설명, 직무에 지원한 동기 및 본인만의 차별화된 강점을 서술해 주십시오. 700",https://linkareer.com/cover-letter/30035,job_competency
+Q024,본인의 경험 중 가장 효과적으로 구매한 경험을 기술해 주십시오. (자동차와 연관될수록 좋습니다.) 700,https://linkareer.com/cover-letter/30035,creative_free
+Q025,"회사와 직무를 선택한 이유는 무엇이며, 만약 입사하게된다면 어떻게 회사 발전에 기여할 수 있을지 기술해주시기 바랍니다. (700자)",https://linkareer.com/cover-letter/30037,motivation
+Q026,CJ올리브네트웍스가 '취업준비생이 가장 가고싶은 회사 1위'가 되기 위해서 어떤 부분이 필요하다고 생각하는지 기술해주시기 바랍니다. (100자),https://linkareer.com/cover-letter/30037,social_view
+Q027,지원하고자 하는 직무에 대해 본인의 차별적인 강점을 제시해 주세요.,https://linkareer.com/cover-letter/30039,job_competency
+Q028,네패스를 책 혹은 노래로 비유한다면 어떤 것일지 자유롭게 쓰시오(장르/제목 자유),https://linkareer.com/cover-letter/30089,creative_free
+Q029,"직무에 지원한 동기와 지원 직무를 잘 수행할 수 있는 이유를 본인의 경험, 준비와 노력을 바탕으로 기술하여 주십시오",https://linkareer.com/cover-letter/30089,job_competency
+Q030,타인과 협업하여 성과를 냈던 경험을 상황->자신의 역할->결과 순으로 쓰시오,https://linkareer.com/cover-letter/30089,teamwork
+Q031,실패나 어려움을 겪고 이를 극복한 경험을 구체적 사례를 들어 쓰시오,https://linkareer.com/cover-letter/30089,failure
+Q032,자신의 일상과 인생에서 감사하다고 느꼈던 상황 혹은 경험 10가지를 쓰시오,https://linkareer.com/cover-letter/30089,growth_values
+Q033,건강하고 올바르게 자랄 수 있도록 인도해주신 부모님 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q034,항상 고민을 들어주고 공감해주는 친구들 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q035,입원했을 때 저를 간호해주신 의료진분들 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q036,고등학생 시절 넓은 시야를 가질 수 있도록 가르침을 주신 담임선생님 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q037,비가 오나 눈이 오나 항상 버스를 운행해주시는 기사님들 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q038,아르바이트를 할 때 적극적으로 저의 의견을 수용해주신 사장님 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q039,운동을 통해 건강한 삶을 살도록 도와주신 트레이너님 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q040,해외 여행에서 착오가 생겼을 때 도와주신 외국인분들 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q041,근면 성실한 자세로 열심히 살아온 제 자신 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q042,네패스에 지원할 수 있어 감사합니다.,https://linkareer.com/cover-letter/30089,etc
+Q043,"도쿄일렉트론코리아에 지원하게 된 계기와 지원하신 직무에 대한 생각을 기술해주시기 바랍니다. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30111,motivation
+Q044,"성장과정과 학창시절, 성격의 장단점에 대해 기술해주시기 바랍니다. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30111,personality
+Q045,"지원하신 직무와 관련하여 습득한 지식과 경험에 대해 기술해주시기 바랍니다. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30111,job_competency
+Q046,"앞으로의 계획과 포부에 대해 기술해주시기 바랍니다. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30111,motivation
+Q047,지원 직무와 관련된 수강 과목 및 경험을 간략하게 기술하여 주시기 바랍니다.,https://linkareer.com/cover-letter/30117,job_competency
+Q048,지원 직무 수행과 연계한 본인만의 경쟁력 및 강점을 기술하여 주시기 바랍니다.,https://linkareer.com/cover-letter/30117,job_competency
+Q049,"지원 직무 관련 최근 Trend를 간략히 기술하고, 이에 대한 본인의 견해를 구체적으로 기술하여 주시기 바랍니다.",https://linkareer.com/cover-letter/30117,social_view
+Q050,네패스를 책 혹은 노래로 비유한다면 어떤 것일지 자유롭게 쓰시오 (장르/제목 자유) 500,https://linkareer.com/cover-letter/30143,creative_free
+Q051,"직무에 지원한 동기와 지원 직무를 잘 수행할 수 있는 이유를 본인의 경험, 준비와 노력을 바탕으로 기술하여 주십시오 500",https://linkareer.com/cover-letter/30143,job_competency
+Q052,3. 타인과 협업하여 성과를 냈던 경험을 상황->자신의 역할->결과 순으로 쓰시오 500,https://linkareer.com/cover-letter/30143,teamwork
+Q053,4. 실패나 어려움을 겪고 이를 극복한 경험을 구체적 사례를 들어 쓰시오500,https://linkareer.com/cover-letter/30143,failure
+Q054,5. 자신의 일상과 인생에서 감사하다고 느꼈던 상황 혹은 경험 10가지를 쓰시오500,https://linkareer.com/cover-letter/30143,growth_values
+Q055,1. 어떤 일을 해도 저를 믿고 지지해 주시는 부모님께 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q056,2. 다양한 알바를 통해 다양한 경험을 할 수 있었음에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q057,3. 관심 있는 분야에 지원할 수 있는 자격이 주어짐에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q058,4. 항상 내 편이 되어주는 친구들이 있다는 것에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q059,5. 힘들었던 취준 생활을 통해 오히려 성장할 수 있었음에 감사합니다,https://linkareer.com/cover-letter/30143,etc
+Q060,6. 해외 여러 나라들을 다니면서 넓은 세상을 볼 수 있었음에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q061,7. 건강을 잃어 운동을 하게 되어 오히려 더 건강해진 것에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q062,8. 원하는 지식을 맘껏 얻을 수 있는 시대에 태어난 것에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q063,9. 코로나가 심각한 상황 속에서도 가족과 친구들이 건강한 것에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q064,10. 좋은 교수님들께 질 좋은 교육을 받을 수 있는 환경에 놓인 것에 감사합니다.,https://linkareer.com/cover-letter/30143,etc
+Q065,"직장으로서 지엠테크니켈센터코리아를 선택한 이유와 희망분야를 지원한 이유는 무엇인지? 그리고 지원하는 분야의 직무를 잘 수행하기 위해 어떤 준비를 했는지, 학습분야 또는 관련경험/직무 경험 중심으로 기술해 주십시오.",https://linkareer.com/cover-letter/30144,job_competency
+Q066,경험해 보지 않은 새로운 과제나 업무를 맡아 이를 성공적으로 해결했거나 실패했던 사례에 대해 기술해 주십시오. 당신은 그 상황에서 어떤 생각과 행동을 했고 결과는 어떠했는지 기술해 주십시오.,https://linkareer.com/cover-letter/30144,failure
+Q067,"한국노인인력개발원에 지원하게 된 동기를 기술하고, 입사한다면 우리원에 어떤 역할 또는 기여를 할 수 있을지에 대해 기술해 주십시오. (500자 이내)",https://linkareer.com/cover-letter/30154,motivation
+Q068,"본인과 다른 성향이나 배경을 가진 구성원들과 공동과업을 달성하는 과정에서 발생했던 어려움과, 그 어려움을 극복하기 위한 노력 및성과를 기술해 주십시오. (500자 이내)",https://linkareer.com/cover-letter/30154,failure
+Q069,우리원 3가지 인재상(최고 지향 / 변화 선도 / 타인 배려) 중 본인과 가장 부합한다고 생각하는 인재상을 선택하여 그 이유를 구체적인 사례를 들어 기술해 주십시오. (500자 이내),https://linkareer.com/cover-letter/30154,growth_values
+Q070,"본인의 장점과 단점에 대해 기술하고, 본인의 업무 능력을 발휘하기 위해 장단점을 어떤 방식으로 향상/개선시킬지를 기술해 주십시오. (500자 이내)",https://linkareer.com/cover-letter/30154,personality
+Q071,성장과정 (100~150자),https://linkareer.com/cover-letter/30182,growth_values
+Q072,성격(장단점) 및 생활신조 (100~150자),https://linkareer.com/cover-letter/30182,personality
+Q073,"학교생활 및 사회봉사활동, 연수여행경험 (100~150자)",https://linkareer.com/cover-letter/30182,growth_values
+Q074,지원동기 및 입사 후 포부 (100~150자),https://linkareer.com/cover-letter/30182,motivation
+Q075,기타사항 (150자 이내),https://linkareer.com/cover-letter/30182,etc
+Q076,직무 관련 역량 (본인만의 경쟁력) (500자 이내),https://linkareer.com/cover-letter/30182,job_competency
+Q077,"성장과정 및 학창시절을 통해 자신이 어떤 가치관과 사회관을 가지게 되었는지 설명해주십시오. (최소 200자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30201,growth_values
+Q078,"본인의 강점과 약점을 언급하시고, 그 강점이 앞으로 당사와 본인의 발전에 어떻게 기여할 수 있는지 서술해주십시오. (최소 200자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30201,motivation
+Q079,"당사를 지원한 동기와 입사 후 만들고 싶은 당사의 모습을 설명하고, 이를 위해 본인은 어떤 노력을 할 것인지 설명해주십시오. (최소 200자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30201,motivation
+Q080,"지원분야에 있어 가장 중요한 실무역량은 무엇이라고 생각하는지 정의하고, 본인의 현재 역량을 키우기 위해 어떤 노력을 해왔는지 기술하여 주십시오. (최소 200자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30201,job_competency
+Q081,"자신의 사회활동 및 대외활동에 대해 서술하고, 활동에 대한 체험과 느낀 점을 기술해주십시오. (최소 200자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30201,growth_values
+Q082,KMAC에 지원한 이유는?,https://linkareer.com/cover-letter/30202,motivation
+Q083,지원부서를 선택한 이유와 본인이 갖춘 역량은?,https://linkareer.com/cover-letter/30202,job_competency
+Q084,KMAC에서 이루고 싶은 꿈은?,https://linkareer.com/cover-letter/30202,motivation
+Q085,학교나 직장에서 드러내고 싶은 경험이나 성과는?,https://linkareer.com/cover-letter/30202,creative_free
+Q086,"본인은 어떤 사람인지 기술하시오. (성격, 기질, 신념 등)",https://linkareer.com/cover-letter/30202,personality
+Q087,지원동기,https://linkareer.com/cover-letter/30204,motivation
+Q088,입사 후 포부,https://linkareer.com/cover-letter/30204,motivation
+Q089,성장과정 및 개인특성,https://linkareer.com/cover-letter/30222,growth_values
+Q090,성공 및 실패사례,https://linkareer.com/cover-letter/30222,failure
+Q091,지원동기 및 비전,https://linkareer.com/cover-letter/30222,motivation
+Q092,기타,https://linkareer.com/cover-letter/30222,etc
+Q093,플랜트 인턴 경험,https://linkareer.com/cover-letter/30235,etc
+Q094,뛰어난 협업 능력,https://linkareer.com/cover-letter/30235,teamwork
+Q095,"지원한 직무에 대한 본인의 경쟁력(지식, 경험, 스킬 등)은 무엇인지 구체적인 사례(학내외 활동, 프로젝트 등)를 들어 서술하고, 이를 통해 입사 후 기여할 수 있는 점은 무엇인지 작성해주시기 바랍니다. (최소 1자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30236,job_competency
+Q096,"살아오면서 실패했던 경험과 이를 극복하기 위해 어떠한 노력을 했는지 기술하고, 그러한 경험이 본인의 삶에 어떠한 영향을 미쳤는지 구체적으로 작성해주시기 바랍니다. (최소 1자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30236,failure
+Q097,"도전적인 목표와 계획을 세우고 이를 달성하기 위해 가장 열정적으로 몰입했던 경험에 대해 서술하고, 그로 인해 무엇을 배웠는지 구체적으로 작성해주시기 바랍니다. (최소 1자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30236,challenge
+Q098,귀하가 의사결정을 할 때 가장 중요하게 생각하는 가치와 그 이유는 무엇입니까?,https://linkareer.com/cover-letter/30237,growth_values
+Q099,위의 가치를 지키고 실현하기 위하여 본인이 기울인 노력 및 사례를 서술하여 주십시오.,https://linkareer.com/cover-letter/30237,growth_values
+Q100,귀하를 가장 잘 표현할 수 있는 상징단어와 그 이유는 무엇입니까?,https://linkareer.com/cover-letter/30237,creative_free
+Q101,귀하가 보유한 강점(지식/기술/특기/사회성 등)을 활용하여 현대트랜시스의 성장에 기여할 수 있는 점은 무엇입니까?,https://linkareer.com/cover-letter/30237,motivation
+Q102,성장 과정,https://linkareer.com/cover-letter/30251,growth_values
+Q103,성격의 장단점,https://linkareer.com/cover-letter/30251,personality
+Q104,좌우명 및 가치관,https://linkareer.com/cover-letter/30251,growth_values
+Q105,입사지원동기,https://linkareer.com/cover-letter/30251,motivation
+Q106,"성장과정: 가족사항, 학창시절, 교우관계, 생활습관, 자신에게 크게 영향을 미친 사건 등을 포함하여 구체적으로 작성(500자)",https://linkareer.com/cover-letter/30282,growth_values
+Q107,실패 혹은 좌절을 극복한 사례와 이를 통해 얻은 교훈은? (최대 300자),https://linkareer.com/cover-letter/30282,failure
+Q108,증권업을 선택하게 된 이유와 증권사 중 당사를 선택한 이유(최대 300자),https://linkareer.com/cover-letter/30282,motivation
+Q109,지원한 분야는 어떤 일을 한다고 생각하는가?(최대 200자),https://linkareer.com/cover-letter/30282,job_competency
+Q110,지원한 분야에 본인이 적합한 이유를 증명하시오. (최대 500자),https://linkareer.com/cover-letter/30282,job_competency
+Q111,"당신의 인생계획에서 꿈은 무엇이고, 그 꿈을 이루기 위해 회사가 어떻게 도움을 줄 수 있는지 서술하시오. (최대 500자)",https://linkareer.com/cover-letter/30282,motivation
+Q112,"한국지역정보개발원에 지원한 동기와 우리원의 핵심가치를 기반으로 한 자기소개를 작성해 주십시오. - 한국지역정보개발원 핵심가치 : 신뢰와 고객만족, 상생과 공헌, 도전과 혁신, 청렴과 소통",https://linkareer.com/cover-letter/30307,growth_values
+Q113,"해결하기 어려운 문제나 도전적인 목표를 달성하기 위해 본인의 관련 지식/기술을 적용할 수 있었던 경험에 대해 구체적으로 작성해 주십시오. - 본인이 구체적으로 무엇을 했으며, 그 결과에 대한 구체적인 설명 포함",https://linkareer.com/cover-letter/30307,challenge
+Q114,"문제상황에서 남들이 생각하지 못했던 아이디어를 제안하여 목표했던 성과를 달성했던 경험에 대해 구체적으로 작성해 주십시오. - 문제상황, 남들이 생각하지 못했던 이유 및 목표했던 성과, 아이디어 탐색 및 적용과정에 대한 구체적인 설명 포함",https://linkareer.com/cover-letter/30307,problem_solving
+Q115,"본인의 역량과 발전가능성을 바탕으로 우리원에 입사 후 포부 및 업무계획을 구체적으로 작성해 주십시오. - 본인의 역량과 발전가능성, 입사후 포부, 지원직무에 대한 업무계획에 대한 구체적인 설명 포함",https://linkareer.com/cover-letter/30307,motivation
+Q116,자신의 성격에 대한 장점과 단점을 기술하세요.,https://linkareer.com/cover-letter/30309,personality
+Q117,"자신이 보유한 IT관련 핵심역량을 기술하시고, 우리 회사 어떤 부분에 기여할 수 있는지 서술하세요.",https://linkareer.com/cover-letter/30309,motivation
+Q118,자신이 학업 이외에 관심과 열정을 가지고 했던 다양한 경험 중 가장 기억에 남는 것을 기술하세요.,https://linkareer.com/cover-letter/30309,challenge
+Q119,"최근 5년 동안 자신이 경험한 대표적인 성공과 실패 사례가 무엇이며, 이를 실현 및 극복하기 위해 어떤 일을 했는지 기술하세요.",https://linkareer.com/cover-letter/30309,failure
+Q120,우리 회사의 지원동기와 입사 후 목표 및 실현계획을 구체적으로 기술하세요.,https://linkareer.com/cover-letter/30309,motivation
+Q121,한국지역정보개발원에 지원한 동기와 우리원의 핵심가치를 기반으로 한 자기소개를 작성해 주십시오. (1000자 이내),https://linkareer.com/cover-letter/30310,growth_values
+Q122,학술 동아리,https://linkareer.com/cover-letter/30310,etc
+Q123,데이터베이스 팀 프로젝트,https://linkareer.com/cover-letter/30310,etc
+Q124,"지원한 업무에서 요구하는 전문성을 가지기 위해 어떠한 노력을 하였으며, 다른 사람과 차별화 되는 본인만의 노하우나 다른 분야로의 활용능력을 증명할 수 있는 것은 무엇입니까?",https://linkareer.com/cover-letter/30310,job_competency
+Q125,해결하기 어려운 문제나 도전적인 목표를 달성하기 위해 본인의 관련 지식/기술을 적용할 수 있었던 경험에 대해 구체적으로 작성해 주십시오.,https://linkareer.com/cover-letter/30310,challenge
+Q126,문제상황에서 남들이 생각하지 못했던 아이디어를 제안하여 목표했던 성과를 달성했던 경험에 대해 구체적으로 작성해 주십시오,https://linkareer.com/cover-letter/30310,problem_solving
+Q127,기존 프로세스 : 칠판에 설치 순서 작성,https://linkareer.com/cover-letter/30310,etc
+Q128,"프로세스 향상 방안 : 윈도우 설치 매뉴얼 문서화, 파일 공유",https://linkareer.com/cover-letter/30310,etc
+Q129,티끌은 나중에 태산이 되어 돌아온다.,https://linkareer.com/cover-letter/30310,etc
+Q130,본인의 역량과 발전가능성을 바탕으로 우리원에 입사 후 포부 및 업무계획을 구체적으로 작성해 주십시오,https://linkareer.com/cover-letter/30310,motivation
+Q131,본인의 가치관 및 장·단점에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/30320,growth_values
+Q132,광주은행에 지원한 동기와 입행 후 계획에 대해 구체적으로 기술해 주십시오.,https://linkareer.com/cover-letter/30320,motivation
+Q133,"귀하가 지금까지 도전적인 목표를 설정하고 성공 또는 실패한 경험을 기술하고 그 과정에서 본인의 구체적인 노력, 배운점, 결과를 기술하세요.",https://linkareer.com/cover-letter/30320,failure
+Q134,일상생활 또는 단체 프로젝트를 수행하면서 다른 사람 또는 조직과의 갈등을 극복한 경험에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/30320,failure
+Q135,디지털 시대에 은행원으로서 필요한 역량과 본인이 갖춘 역량을 구체적으로 기술해 주십시오.,https://linkareer.com/cover-letter/30320,job_competency
+Q136,면접 시 받고 싶은 질문과 답변이 있다면?,https://linkareer.com/cover-letter/30321,creative_free
+Q137,개발 역량이 주를 이루는데 왜 개발직에 지원하지 않고 시스템 엔지니어에 지원하였습니까?,https://linkareer.com/cover-letter/30321,etc
+Q138,1-1. 만약 개발 직무를 맡게 된다면 괜찮으시겠습니까?,https://linkareer.com/cover-letter/30321,etc
+Q139,가장 기억에 남는 프로젝트는 무엇입니까?,https://linkareer.com/cover-letter/30321,job_competency
+Q140,갈등 경험이 있습니까?,https://linkareer.com/cover-letter/30321,etc
+Q141,3-1. 어떻게 해결하였습니까?,https://linkareer.com/cover-letter/30321,etc
+Q142,"전북은행을 지원하게 된 동기와 입행하기 위해 준비해 온 과정, 입행 후 이루고 싶은 목표에 대하여 기술해 주세요. (최대 600자 입력가능)",https://linkareer.com/cover-letter/30323,motivation
+Q143,본인이 지원한 분야의 직무를 수행함에 있어서 보유하고 있는 강점에 대해 본인의 경험을 중심으로 기술해주세요. (최대 600자 입력가능),https://linkareer.com/cover-letter/30323,job_competency
+Q144,코로나 시대의 장기화에 따라 금융권도 많은 변화가 생기고 있습니다. 코로나 시대에 맞춰 전북은행이 나아가야 할 방향에 대해 기술해주세요. (최대 600자 입력가능),https://linkareer.com/cover-letter/30323,social_view
+Q145,"지원자의 역량, 특성, 가치관, 장단점 등을 반영하여 본인을 한 문장 내외로 표현해 주십시오.",https://linkareer.com/cover-letter/30327,personality
+Q146,"지원자가 갖추고 있는‘직무역량’중 신용보증기금이 수행하고 있는 업무와 연관된 것에 대해서 지원자의 경험, 교육, 경력, 자격사항을 바탕으로 자세히 기술하여 주십시오. (240자 이상 800자 이내)",https://linkareer.com/cover-letter/30327,job_competency
+Q147,"기술적 측면 – 데이터베이스 구축, 안드로이드 개발 등 경험",https://linkareer.com/cover-letter/30327,etc
+Q148,지식적 측면,https://linkareer.com/cover-letter/30327,etc
+Q149,지원동기 및 입사포부,https://linkareer.com/cover-letter/30351,motivation
+Q150,생활신조,https://linkareer.com/cover-letter/30351,personality
+Q151,가장 기억에 남는 팀활동,https://linkareer.com/cover-letter/30351,etc
+Q152,특기사항,https://linkareer.com/cover-letter/30351,etc
+Q153,"석유화학업계의 향후 트렌드를 조망하고, 롯데케미칼이 이러한 변화를 선도하기 위해 본인이 입사 후에 어떻게 회사에 기여하고 싶으신지, 본인의 강점 등 구체적 근거를 포함해 기술해 주세요. (700자)",https://linkareer.com/cover-letter/30357,social_view
+Q154,지금의 나를 있게 한 가장 중요한 사건에 대해 구체적으로 기술해주세요. (700자),https://linkareer.com/cover-letter/30357,growth_values
+Q155,"지원하신 직무가 무엇을 하는 일이라고 생각하시는지, 본인의 정의를 기술해 주십시오. 직무수행에 필요한 역량/지식을 갖추기 위해 학업 또는 학업 외적으로 어떤 준비를 하셨는지 구체적 사례 중심으로 작성해 주세요.(700자)",https://linkareer.com/cover-letter/30357,job_competency
+Q156,"달성하기 어려운 높은 목표를 자율적으로 설정해서 도전해본 경험을 기술해 주세요. 목표 수립과정과 계기, 수행과정에서 겪었던 어려움과 극복을 위해 기울인 노력 등을 구체적으로 작성해 주시기 바랍니다. (700자)",https://linkareer.com/cover-letter/30357,challenge
+Q157,"본인이 참여한 팀 활동 중 가장 기억에 남는 사례를 기술해 주세요. 각 팀원들의 역할, 과정에서 의견조율 등 어려웠던 점과 그를 극복하기 위해 어떤 노력을 기울였는지 등을 포함해 구체적으로 작성하여 주시기 바랍니다. (700자)",https://linkareer.com/cover-letter/30357,failure
+Q158,지원 동기,https://linkareer.com/cover-letter/30373,motivation
+Q159,성격의 장·단점,https://linkareer.com/cover-letter/30373,personality
+Q160,학창시절 및 대외활동,https://linkareer.com/cover-letter/30373,etc
+Q161,성격의 장단점 및 가치관과 인생관,https://linkareer.com/cover-letter/30374,personality
+Q162,상세경력 및 업무Skill,https://linkareer.com/cover-letter/30374,etc
+Q163,내 인생의 가장 중요한 turning point (전환점),https://linkareer.com/cover-letter/30374,growth_values
+Q164,"본인이 입사하고 싶은 회사 지원 시 가장 중요하게 생각하는 점은 무엇이며, 농협중앙회를 선택한 이유와 향후 농협중앙회 발전에 기여할 수 있는 본인의 강점을 작성해 주십시오.(1000바이트)",https://linkareer.com/cover-letter/30450,motivation
+Q165,"코로나19의 영향으로 변화된 농업·농촌의 모습에 대해 설명하고, 포스트 코로나 시대의 농업·농촌 경쟁력 제고 방안과 이를 위해 입사 후 본인이 갖추어야할 역량에 대해 구체적으로 작성해 주십시오.(1000바이트)",https://linkareer.com/cover-letter/30450,job_competency
+Q166,"업무(IT분야의 경우 IT프로젝트) 또는 과제 수행 과정에서 (예상치 못한 문제가 발생하였을 때) 기존과 다른 방식으로 개선했던 경험을 서술하고, 이를 해결하기 위해 노력했던 방법과 결과를 구체적으로 작성해 주십시오.(1000바이트)",https://linkareer.com/cover-letter/30450,problem_solving
+Q167,위 자기소개서 내용 외에 추가적으로 자신을 소개할 내용을 기술하여 주십시오.(1000바이트),https://linkareer.com/cover-letter/30450,creative_free
+Q168,"중요한 일이나 책임을 맡았을 때, 지원자가 과업을 처리하는 방식에 대해 구체적인 경험과 함께 작성하여 주십시오.(일이나 책임의 내용, 계획수립 과정, 어려웠던 점, 결과 등을 중심으로 서술) (700자)",https://linkareer.com/cover-letter/30452,failure
+Q169,지금까지의 경험 중 2인 이상이 모여 공동 작업을 진행했던 경험에 대해 기술해 주시기 바랍니다. 이 경험 속에서 지원자의 역할과 협력 과정을 작성해 주시기 바랍니다. (700자),https://linkareer.com/cover-letter/30452,teamwork
+Q170,다른 세대와 소통하여 좋은 결과를 이끌어내었던 경험에 대해 작성하여 주십시오. (700자),https://linkareer.com/cover-letter/30452,teamwork
+Q171,"타인 또는 공익을 위해 활동했던 경험을 작성해주시고, 공공기관 직원이 갖춰야할 직업윤리 의식에 대한 의견을 기술하여 주시기 바랍니다. (700자)",https://linkareer.com/cover-letter/30452,social_view
+Q172,"한국관광의 강점과 약점을 각각 1개씩 제시해주시고, 작성하신 의견과 연계하여 향후 한국관광공사에서 집중해야하는 사업 분야에 대해 기술해주시기 바랍니다. (700자)",https://linkareer.com/cover-letter/30452,social_view
+Q173,삼성전기를 지원한 이유와 입사 후 회사에서 이루고 싶은 꿈을 기술하십시오. 700자 (영문작성 시 1400자) 이내,https://linkareer.com/cover-letter/30481,motivation
+Q174,"본인의 성장과정을 간략히 기술하되 현재의 자신에게 가장 큰 영향을 끼친 사건, 인물 등을 포함하여 기술하시기 바랍니다. (※작품속 가상인물도 가능) 1500자 (영문작성 시 3000자) 이내",https://linkareer.com/cover-letter/30481,growth_values
+Q175,"지원을 희망하는 사업부와 제품에 대해 반드시 작성하고, 전공지식/경험(프로젝트, 논문, 공모전 등)을 토대로 본인이 적합한 사유를 구체적으로 서술해 주시기 바랍니다. 1000자 (영문작성 시 2000자) 이내",https://linkareer.com/cover-letter/30481,job_competency
+Q176,"CNCITY 에너지에 지원하게 된 지원동기는 무엇이며, 입사 후 어떠한 포부로 업무에 임할 지 작성해주시기 바랍니다.",https://linkareer.com/cover-letter/30570,motivation
+Q177,어떠한 일에 가장 크게 몰입해서 ‘재미있고 즐겁게’했던 경험에 대해 작성해주시기 바랍니다. 어떠한 이유로,https://linkareer.com/cover-letter/30570,challenge
+Q178,"자기주도적으로 과제/목표를 설정하여 끝까지 완수해 낸 경험을 작성해 주시기 바랍니다. 목표를 설정한 이유는 무엇이며, 추진하는 과정에서 어떤 어려움이 있었으며 어떻게 극복하였는지 그리고 느낀점을 서술하여 주시기 바랍니다.",https://linkareer.com/cover-letter/30570,challenge
+Q179,팀 단위의 과제 혹은 프로젝트를 수행할 때 본인이 지닌 장점과 단점에 대해 구체적으로 작성해주시기 바랍니다.,https://linkareer.com/cover-letter/30570,personality
+Q180,스스로 높은 수준의 목표를 세우고 치열하고 끈기있게 노력하여 성취한 경험과 그 과정에 대해 소개해주세요(800),https://linkareer.com/cover-letter/30593,challenge
+Q181,해결하기 어려웠던 문제나 상황에서 남들이 하지않는 새로운 시도/변화를 통해 기회를 창출하거나 문제해결한 경험 서술(800),https://linkareer.com/cover-letter/30593,failure
+Q182,본인이 끝까지 파고들어 본 가장 의미있었던 개발 경험 또는 개발 활동에 대해 얘기해 주세요.,https://linkareer.com/cover-letter/30595,challenge
+Q183,"지원하신 포지션과 연관지어, 학교 수업 또는 대외활동 등을 통해 습득한 'CS 지식'이나 '기술적 역량'에 대해 설명해 주세요. (최대 3개 / 1,000자 이내)",https://linkareer.com/cover-letter/30595,job_competency
+Q184,본인의 SW개발 활동 경험 중 다른 사람과 함께 같은 목표를 위해 노력한 경험 또는 어려운 기술적 문제를 해결한 경험에 대해 얘기해 주세요.,https://linkareer.com/cover-letter/30595,teamwork
+Q185,"(조직적합성) 한국기초과학지원연구원 지원동기 및 입사 후 실천하고자 하는 목표를 본인의 역량과 결부시켜 기술하여 주십시오. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30661,motivation
+Q186,"(문제해결능력) 지금까지 살아오면서 부딪혔던 가장 큰 난관과 이를 해결했던 경험에 대하여 기술하여 주십시오. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30661,problem_solving
+Q187,"(대외관계능력) 조직 및 단체 활동을 하면서, 서로간 입장차가 있는 의견들을 하나로 통합하여 성공적으로 이끈 경험에 대하여 기술해 주십시오. (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30661,teamwork
+Q188,사설교육기관에서의 교육이수,https://linkareer.com/cover-letter/30691,etc
+Q189,전국단위 팀프로젝트 참여,https://linkareer.com/cover-letter/30691,etc
+Q190,"지원 동기 (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30701,motivation
+Q191,"지원한 직무에 적합한 이유 (본인의 차별화된 역량을 근거로 기재) (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30701,job_competency
+Q192,"경력사항 세부 (신입의 경우 인턴십 및 직장경력 등이 있을 경우만 기술, 미해당시 기입 x) (최소 100자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/30701,etc
+Q193,"기타 사항 (상기 질문 문항에 없는 것으로 본인을 소개할 수 있는 내용) (최소 100자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/30701,etc
+Q194,"E&S의 어떤 부분에 대해 관심을 가지고 지원하게 되었으며, 입사 후 어떻게 기여하고 싶은지 본인의 강점을 기반으로 작성해 주십시오 (800자 이내)",https://linkareer.com/cover-letter/30702,motivation
+Q195,"지원 직무와 관련하여, 학교/사회 생활을 통해 본인의 전문성 및 역량 개발에 도움이 되었던 경험, 경력, 활동을 먼저 서술하고 지원 직무를 수행하는데 어떻게 활용(도움) 될 수 있는지 작성해 주십시오 (1000자 이내)",https://linkareer.com/cover-letter/30702,job_competency
+Q196,기존의 틀을 깨고 새로운 시도와 도전을 통해 목표를 성취한 경험을 작성해 주십시오 (800자 이내),https://linkareer.com/cover-letter/30702,challenge
+Q197,"혼자 하기 어려운 일에서 다양한 자원 활용, 타인의 협력을 최대한 이끌어내며, Teamwork를 발휘하여 공동의 목표 달성에 기여한 경험에 대해 작성해 주십시오 (800자 이내)",https://linkareer.com/cover-letter/30702,teamwork
+Q198,"중요한 일이나 책임을 맡았을 때, 지원자가 과업을 처리하는 방식에 대해 구체적인 경험과 함께 작성하여 주십시오.(일이나 책임의 내용, 계획수립 과정, 어려웠던 점, 결과 등을 중심으로 서술)",https://linkareer.com/cover-letter/30718,failure
+Q199,지금까지의 경험 중 2인 이상이 모여 공동 작업을 진행했던 경험에 대해 기술해 주시기 바랍니다. 이 경험 속에서 지원자의 역할과 협력 과정을 작성해 주시기 바랍니다.,https://linkareer.com/cover-letter/30718,teamwork
+Q200,다른 세대와 소통하여 좋은 결과를 이끌어내었던 경험에 대해 작성하여 주십시오.,https://linkareer.com/cover-letter/30718,teamwork
+Q201,"타인 또는 공익을 위해 활동했던 경험을 작성해주시고, 공공기관 직원이 갖춰야할 직업윤리 의식에 대한 의견을 기술하여 주시기 바랍니다",https://linkareer.com/cover-letter/30718,social_view
+Q202,직무 관련 경험 기술,https://linkareer.com/cover-letter/30739,job_competency
+Q203,지원동기 및 포부,https://linkareer.com/cover-letter/30739,motivation
+Q204,본인이 가진 역량을 중심으로 기존의 방식으로 해결하기 어려운 상황에 직면하여 본인만의 지식 및 기술이나 아이디어를 발휘하여 문제를 해결한 경험을 기술해주십시오. (최대 800자 입력가능),https://linkareer.com/cover-letter/30751,problem_solving
+Q205,지원한 직군에서 구체적으로 하고 싶은 일과 본인이 그 일을 남들보다 잘할 수 있는 차별화된 능력과 경험을 기술하시오,https://linkareer.com/cover-letter/30810,job_competency
+Q206,학업 외 가장 열정적이고 도전적으로 몰입하여 성과를 창출했거나 목표를 달성한 경험을 기술하시오,https://linkareer.com/cover-letter/30810,challenge
+Q207,본인의 지원직무를 어떻게 이해하고 있는지 구체적으로 기술하고해당 분야에 본인이 적합하다고 판단할 수 있는 근거를 사례 및 경험을 바탕으로 기재해 주세요.,https://linkareer.com/cover-letter/30821,job_competency
+Q208,목표를 달성하는 과정에서 힘들고 어려운 문제가 발생하였음에도 포기하지 않고 임무를 완수한 사례를 작성해 주세요.,https://linkareer.com/cover-letter/30821,challenge
+Q209,"공동의 목표를 달성하기 위해 다른 사람들과 힘을 합쳐 노력했던 경험을 구체적으로 기술하고, 그 경험을 통해 배운 점을 작성해 주세요.",https://linkareer.com/cover-letter/30821,teamwork
+Q210,KB국민은행에 지원한 동기와 입행 후 이루고 싶은 목표를 구체적으로 기술해 주십시오.,https://linkareer.com/cover-letter/30841,motivation
+Q211,"지원분야와 관련하여 자신만의 강점은 무엇이며, 이를 갖추기 위해 어떤 노력을 해왔는지 구체적인 사례를 근거로 기술해 주십시오.",https://linkareer.com/cover-letter/30841,job_competency
+Q212,담대한 목표를 세우고 끝까지 최선을 다해 도전했던 경험 및 그 경험을 통해 배운 점을 기술해 주십시오.,https://linkareer.com/cover-letter/30841,challenge
+Q213,"IT 관련 프로젝트 및 기타 학습(공모전, 논문, 이수과목 등)을 진행한 경험을 서술해 주십시오. 나아가 이러한 경험이 직무수행에 있어 어떤 도움이 될 수 있을지",https://linkareer.com/cover-letter/30841,job_competency
+Q214,푸본현대생명 인턴십 '지원동기'에 대해 알려주세요.,https://linkareer.com/cover-letter/30881,motivation
+Q215,지금의 '내'가 있기까지 영향을 미친 경험 또는 본인의 성장과정 발전을 위해 시도/도전했던 노력에 대해 설명해 주세요.,https://linkareer.com/cover-letter/30881,growth_values
+Q216,"중요한 일이나 책임을 맡았을 때, 지원자가 과업을 처리하는 방식에 대해 구체적인 경험과 함께 작성하여 주십시오.(일이나 책임의 내용, 계획수립 과정, 어려웠던 점, 결과 등을 중심으로 서술). (300~700자)",https://linkareer.com/cover-letter/30930,failure
+Q217,지금까지의 경험 중 2인 이상이 모여 공동 작업을 진행했던 경험에 대해 기술해 주시기 바랍니다. 이 경험 속에서 지원자의 역할과 협력 과정을 작성해 주시기 바랍니다. (300~700자),https://linkareer.com/cover-letter/30930,teamwork
+Q218,다른 세대와 소통하여 좋은 결과를 이끌어내었던 경험에 대해 작성하여 주십시오. (300~700자),https://linkareer.com/cover-letter/30930,teamwork
+Q219,"타인 또는 공익을 위해 활동했던 경험을 작성해주시고, 공공기관 직원이 갖춰야할 직업윤리 의식에 대한 의견을 기술하여 주시기 바랍니다. (300~700자)",https://linkareer.com/cover-letter/30930,social_view
+Q220,"한국관광의 강점과 약점을 각각 1개씩 제시해주시고, 작성하신 의견과 연계하여 향후 한국관광공사에서 집중해야하는 사업 분야에 대해 기술해주시기 바랍니다. (300~700자)",https://linkareer.com/cover-letter/30930,social_view
+Q221,지원하신 채용 부문과 채용 분야를 적어 주세요,https://linkareer.com/cover-letter/30944,motivation
+Q222,자신을 자유롭게 소개해 주세요,https://linkareer.com/cover-letter/30944,creative_free
+Q223,SK쉴더스에 지원하신 동기와 포부를 기술해 주세요.,https://linkareer.com/cover-letter/30944,motivation
+Q224,주요경험 및 특기사항 등을 자유롭게 기술해 주세요.,https://linkareer.com/cover-letter/30944,creative_free
+Q225,Applied Materials에 지원한 동기와 CE(Customer Engineer)직무를 희망하는 이유는 무엇인가요?,https://linkareer.com/cover-letter/30992,motivation
+Q226,"Applied Materials 입사를 위해 노력한 경험과, 본인만이 갖춘 매력을 자유롭게 이야기해주세요.(형식 및 길이 제한 없음)",https://linkareer.com/cover-letter/30992,motivation
+Q227,나만의 매력,https://linkareer.com/cover-letter/30992,creative_free
+Q228,네패스를 책 혹은 노래로 비유한다면 어떤 것일지 자유롭게 쓰시오 (장르/제목 자유),https://linkareer.com/cover-letter/30994,creative_free
+Q229,네패스 공정 엔지니어에 지원할 기회가 찾아와 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q230,군대를 통해 만난 사람들이 지금도 연락을 통해 서로에게 힘이 되어주는 것에 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q231,전문계고등학교 재학 당시 열악한 환경 속에서 수능준비를 도와주신 선생님들께 감사합니다,https://linkareer.com/cover-letter/30994,etc
+Q232,일본여행중 비행기를 놓쳤을 때 도와주신분께 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q233,평창동계올림픽 자원봉사자로 합격하여 국가의 큰 사업에 함께 할 기회가 주어졌고 성공에 기여할 수 있어서 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q234,유럽과 미국 해외여행을 다니며 다양한 사람들과 소통하고 문화를 경험할 수 있었던 것에 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q235,교내 빨래방에서 근로를 하며 고객들에게 서비스를 제공할 수 있었던 경험에 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q236,자격증 취득시 수많은 낙방으로 더욱더 열심히 공부해 전문가가 되어 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q237,심리적 부담감 없이 취업준비를 할 수 있게 옆에서 도와주시는 부모님께 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q238,이 문항을 통해 인생의 뒤를 보며 잠깐 심호흡할 기회를 주신 네패스에 감사합니다.,https://linkareer.com/cover-letter/30994,etc
+Q239,본인 성격의 장단점을 자신의 성장과정과 경험을 기반으로 서술하여 주십시오.(600자) - [끈기 기반의 적응력],https://linkareer.com/cover-letter/31002,personality
+Q240,"해당 직무에 지원한 동기와 본인이 적합한 이유 및 근거를 본인의 경험, 전공 등과 연계하여 서술하여 주십시오.(600자) - [팀 프로젝트]",https://linkareer.com/cover-letter/31002,job_competency
+Q241,○ 본인 소개를 해주세요,https://linkareer.com/cover-letter/31003,creative_free
+Q242,○ 우리회사에 지원한 동기가 무엇인가요?,https://linkareer.com/cover-letter/31003,motivation
+Q243,"지원분야/직무에 대한 지원동기와, 해당 분야/직무를 위해 어떤 준비를 해왔는지 소개해주세요.",https://linkareer.com/cover-letter/31079,motivation
+Q244,본인의 특성 및 성격(장점/보완점)을 자유롭게 기술해주세요.,https://linkareer.com/cover-letter/31079,personality
+Q245,LG 에너지솔루션에서 이루고 싶은 본인의 꿈과 비전을 소개해주세요.,https://linkareer.com/cover-letter/31079,motivation
+Q246,귀하의 성장과정을 기술하여 주십시오. (400자),https://linkareer.com/cover-letter/31111,growth_values
+Q247,귀하의 성격의 장단점을 기술하여 주십시오. (400자),https://linkareer.com/cover-letter/31111,personality
+Q248,귀하의 교내외 활동사항 및 주요경력을 기술하여 주십시오. (400자),https://linkareer.com/cover-letter/31111,job_competency
+Q249,귀하의 다른사람과 구별되는 지식/재능을 기술하여 주십시오. (400자),https://linkareer.com/cover-letter/31111,job_competency
+Q250,귀하의 지원동기 및 입사 후 자기계발 계획을 기술하여 주십시오. (400자),https://linkareer.com/cover-letter/31111,motivation
+Q251,귀하의 인생관/직업관을 기술하여 주십시오.,https://linkareer.com/cover-letter/31111,growth_values
+Q252,DB 모델링 및 AWS 서버구축 및 HTTPS 적용,https://linkareer.com/cover-letter/31112,etc
+Q253,"회원 인증 및 인가관련 API, 소셜 로그인 API",https://linkareer.com/cover-letter/31112,etc
+Q254,CORS문제 해결,https://linkareer.com/cover-letter/31112,etc
+Q255,JWT 토큰 API,https://linkareer.com/cover-letter/31112,etc
+Q256,스마트 컨트랙트 개발 지원,https://linkareer.com/cover-letter/31112,etc
+Q257,Flutter를 사용하여 안드로이드 앱 개발,https://linkareer.com/cover-letter/31112,etc
+Q258,"모바일 디바이스에서 블록체인 지갑인 MetaMask를 활용하여, 이더리움 서버에 업로드된 스마트 컨트랜트와 통신하여 차량 정보 NFT화",https://linkareer.com/cover-letter/31112,etc
+Q259,IPFS 서버에 차량 정보 이미지를 업로드하는 모듈 구현,https://linkareer.com/cover-letter/31112,etc
+Q260,본인 성격의 강/약점에 대해서 실제 사례를 포함하여 작성해주세요.(300~700자),https://linkareer.com/cover-letter/31113,personality
+Q261,본인이 회사를 선택하는 기준을 바탕으로 우리 회사를 선택한 이유를 작성해주세요. (300~700자),https://linkareer.com/cover-letter/31113,motivation
+Q262,"해당 직무에 지원하신 이유, 본인이 적합하다고 판단하는 근거, 관련 산출물 등을 작성해주세요. (프로젝트, 포트폴리오, github/블로그 URL 등이 있다면 간단한 설명과 함께 작성) (300 ~ 900자)",https://linkareer.com/cover-letter/31113,job_competency
+Q263,본인이 지원한 직무에서 입사 후 어떠한 업무를 하고 싶은지 작성해주세요. (300 ~ 700자),https://linkareer.com/cover-letter/31113,motivation
+Q264,"역량기술서(핵심역량 or 강점 / 활용방법) (최소 1자, 최대 150자 입력가능)",https://linkareer.com/cover-letter/31114,etc
+Q265,"본인의 성장과정을 작성해 주십시오. (최소 200자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/31114,growth_values
+Q266,"자신의 성격상 장단점은 무엇이며, 장점을 극대화하고 단점을 보완하기 위하여 어떠한 노력을 하고 있는지 작성해 주십시오. (최소 200자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/31114,personality
+Q267,"증권회사에 입사하고자 하는 이유와 증권회사 입사를 위해 지금까지 준비해 온 내용 및 그 방법에 대하여 작성해 주십시오. (최소 200자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/31114,motivation
+Q268,"자신이 지원한 부문에 가장 필요한 것을 무엇이라고 생각하며, 이것을 갖추기 위한 자신만의 노력과 경험에 대하여 작성해 주십시오. (최소 200자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/31114,job_competency
+Q269,"특정한 목표를 세우고 끈기 있게 실행하여 성취했던 경험이 있다면 작성해 주십시오. (최소 200자, 최대 500자 입력가능)",https://linkareer.com/cover-letter/31114,challenge
+Q270,현대오토에버의 해당 직무에 지원한 이유와 앞으로 현대오토에버에서 키워 나갈 커리어 계획을 작성해주시기 바랍니다.,https://linkareer.com/cover-letter/31186,motivation
+Q271,"지원 직무와 관련하여 어떠한 역량을(지식/기술 등) 강점으로 가지고 있는지, 그 역량을 갖추기 위해 무슨 노력과 경험을 했는지 구체적으로 작성해주시기 바랍니다. (학내외 활동/프로젝트/교육 이수 과정 등 본인의 경험을 기반으로 작성해주시기 바랍니다.)",https://linkareer.com/cover-letter/31186,job_competency
+Q272,본인을 자유롭게 소개해 주십시오.,https://linkareer.com/cover-letter/31192,creative_free
+Q273,광주은행에 지원한 동기와 지원분야에 대한 필수역량은 무엇이고 이를 갖추기 위해 어떠한 노력을 하였는지 기술해 주십시오.,https://linkareer.com/cover-letter/31192,motivation
+Q274,디지털 시대에 은행원의 역할 및 나아갈 방향에 대해서 기술해 주십시오.,https://linkareer.com/cover-letter/31192,social_view
+Q275,"자신의 삶에 영향을 미친 가장 중요한 사건이나 경험을 설명하고, 그것이 어떠한 영향을 주었는지 기술해 주십시오.",https://linkareer.com/cover-letter/31192,growth_values
+Q276,광주은행에 입행 후 담당하고 싶은 구체적인 직무 분야와 포부에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/31192,motivation
+Q277,"우리 공사에 지원한 동기를 기술하고, 지원자의 직장 선택 기준 및 공사가 해당 기준에 어떻게 부합하는지에 대해 작성하여 주십시오.",https://linkareer.com/cover-letter/31195,motivation
+Q278,"공사 상품(보금자리론, 주택보증, 주택연금 등) 중 지원자가 가장 관심 갖고 있는 상품을 1가지 선정하고, 그 이유와 공사에 입사하여해당 상품 분야에 대한 전문가로 성장하기 위해 어떠한 계획을 가지고 있는지를 기술해 주십시오.",https://linkareer.com/cover-letter/31195,social_view
+Q279,"공사는 공익성, 전문성, 신뢰를 핵심가치로 삼고 있습니다. 공사의 핵심가치와 관련된 지원자의 경험이 있다면 기술해 주십시오.",https://linkareer.com/cover-letter/31195,growth_values
+Q280,"학교, 동아리 등 소속 집단에서 공동의 성과창출을 위해 본인이 특별히 기여했던 경험과 성과 창출 과정에서 갈등 상황을 해결하기 위해 본인이 남다르게 기울였던 노력을 구체적으로 기술하여 주십시오.",https://linkareer.com/cover-letter/31195,teamwork
+Q281,"공공기관 직원으로서 갖추어야 하는 가장 중요한 가치는 무엇이라고 생각하는지 기술하고, 본인이 어떻게 이에 부합하는지에 대하여 작성하여 주십시오.",https://linkareer.com/cover-letter/31195,growth_values
+Q282,해당 공고 및 세부 수행직무를 희망하는 이유와 본인이 적합하다고 판단할 수 있는 이유 및 근거를 제시해 주십시오.,https://linkareer.com/cover-letter/31225,job_competency
+Q283,"본인의 역량을 나타낼 수 있는 주요 전공과목(최대 5개)을 선정하여, 해당 과목에서 습득한 역량 및 성취도(학점)를 기술해 주십시오. ※ 석사과정자는 연구경력 및 세부 전공에 대해 기술해 주십시오.",https://linkareer.com/cover-letter/31225,job_competency
+Q284,우리은행에 지원하게 된 동기와 IT 관련 역량을 갖추기 위해 노력한 부분을 구체적으로 작성해 주십시오. (1200 byte),https://linkareer.com/cover-letter/31228,motivation
+Q285,공동의 목표를 위해 팀내 협력을 이끌어낸 경험과 이를 통해 달성하였던 성과를 느낀 점과 함께 구체적으로 작성해 주십시오. (1200 byte),https://linkareer.com/cover-letter/31228,teamwork
+Q286,"살아오면서 겪었던 가장 힘든 경험을 서술하고, 이를 이겨내기 위해 했던 노력과 결과를 구체적으로 작성해 주십시오. (1200 byte)",https://linkareer.com/cover-letter/31228,failure
+Q287,우리기관과 해당 지원 직무분야에 지원한 동기에 대해 기술해 주세요.,https://linkareer.com/cover-letter/31238,motivation
+Q288,"지원 직무에 대한 전문성을 키우기 위해 교육, 경험 및 경력사항에 대해 기술해주세요.",https://linkareer.com/cover-letter/31238,job_competency
+Q289,팀 과제 수행 중 발생한 갈등을 원만하게 해결해 본 경험이 있습니까?,https://linkareer.com/cover-letter/31238,etc
+Q290,하단에 기술해 주세요.,https://linkareer.com/cover-letter/31238,etc
+Q291,"현재까지 자신의 과거를 돌이켜볼 때, 가장 힘들었던 상황을 한가지만 소개해주시고,",https://linkareer.com/cover-letter/31238,failure
+Q292,어떤 방법으로 그 상황을 해결했는지를 하단에 기술해 주세요.,https://linkareer.com/cover-letter/31238,problem_solving
+Q293,"직무와 관련해 기울인 노력이나 경험(프로젝트/경진대회/공모전/연구/학습) 가운데 자신의 강점이 잘 드러나는 사례를 기술하고, 그 강점으로 LG유플러스에서 달성하고 싶은 목표가 있다면 기술하여 주십시오. (700)",https://linkareer.com/cover-letter/31243,job_competency
+Q294,목표달성을 위해 스스로 노력하였던 점과 이를 통해 조직과 본인에게 일어난 변화를 구체적으로 기술하여 주십시오. (700),https://linkareer.com/cover-letter/31243,challenge
+Q295,소속된 조직의 공동과업을 달성하는 과정에서 발생했던 어려움과 그 어려움을 극복하기 위해 기울인 노력에 대해 구체적인 사례를 바탕으로 기술해 주십시오. (700),https://linkareer.com/cover-letter/31243,failure
+Q296,자기소개 및 성장과정에 대하여 기술해주시기 바랍니다.,https://linkareer.com/cover-letter/31267,growth_values
+Q297,"직무관련 교육, 경력 및 경험사항에 대해 상세히 기술해주시기 바랍니다.",https://linkareer.com/cover-letter/31267,job_competency
+Q298,KOTRA 청년인턴에 지원한 동기 및 입사 후 계획에 대해 기술해주시기 바랍니다.,https://linkareer.com/cover-letter/31267,motivation
+Q299,"인사/조직문화 담당자가 되기 위한 자신의 강점 3가지를 구체적으로 설명해주세요. (단, 특정 과목 이수 또는 동아리/학회 등 운영 경험은 지양해 주세요) (700자)",https://linkareer.com/cover-letter/31268,personality
+Q300,"입장 차이가 큰 다른 사람을 설득하거나, 함께 일하여 성과를 거둔 경험을 한 가지 소개해 주세요.(700자)",https://linkareer.com/cover-letter/31268,teamwork
+Q301,"본인만의 자기관리 방법 또는 어떤 일을 잘 하기 위한 방법을 소개하고, 그 성과도 알려주세요.(700자)",https://linkareer.com/cover-letter/31268,personality
+Q302,관례상 처리해오던 방식이 아닌 자신만의 방식을 통해 문제를 더 효과적으로 해결하기 위해 노력했던 경험이 있다면 작성해 주십시오. (최대 500자 입력가능),https://linkareer.com/cover-letter/31307,problem_solving
+Q303,집단 내·외의 갈등 상황에서 소통능력을 발휘하여 갈등을 해결하기 위해 노력했던 경험이 있다면 작성해 주십시오. (최대 500자 입력가능),https://linkareer.com/cover-letter/31307,teamwork
+Q304,자신이 보유한 지식 또는 기술 중 지원분야 업무수행을 위해 반드시 필요한 지식 또는 기술에 대해 기술하고 그 지식 또는 기술을 보유하게 된 계기(경력 또는 경험)을 작성해 주십시오. (최대 500자 입력가능),https://linkareer.com/cover-letter/31307,job_competency
+Q305,"자신의 태도 중에서 지원한 분야의 업무수행에 반드시 필요한 태도가 무엇인지 기술하고, 그러한 태도를 보유하게 된 계기(경력 또는 경험)을 작성해 주십시오. (최대 500자 입력가능)",https://linkareer.com/cover-letter/31307,personality
+Q306,삼성디스플레이를 지원한 이유와 입사 후 회사에서 이루고 싶은 꿈을 기술하십시오.,https://linkareer.com/cover-letter/31362,motivation
+Q307,"본인의 성장과정을 간략히 기술하되 현재의 자신에게 가장 큰 영향을 끼친 사건, 인물 등을 포함하여기술하시기 바랍니다. (※작품속 가상인물도 가능)",https://linkareer.com/cover-letter/31362,growth_values
+Q308,최근 사회이슈 중 중요하다고 생각되는 한가지를 선택하고 이에 관한 자신의 견해를 기술해 주시기 바랍니다.,https://linkareer.com/cover-letter/31362,social_view
+Q309,본인의 전공능력이 지원한 직무에 적합한 사유를 구체적 사례를 들어 기술해 주시기 바랍니다.,https://linkareer.com/cover-letter/31362,job_competency
+Q310,"본인이 가진 가장 뛰어난 점과 그렇게 판단한 이유, 한국기술교육대학교 업무수행에서 나타날 수 있는 긍정적 효과에 대하여 기술해 주십시오. (500) - 500",https://linkareer.com/cover-letter/31424,personality
+Q311,자신의 주변에서 발생한 문제를 이전과 다른 방식으로 해결했던 경험에 대하여 기술해 주십시오. (500) - 499,https://linkareer.com/cover-letter/31424,problem_solving
+Q312,본인이 저지른 가장 큰 실수와 그 실수를 다시 하지 않기 위해 노력한 경험에 대하여 기술해 주십시오. (500) - 465,https://linkareer.com/cover-letter/31424,failure
+Q313,"학업, 팀프로젝트, 인턴활동 등을 추진하면서 시간과 일정을 효율적으로 관리하여 주어진 업무나 과제를 효과적으로 해결했던 경험에 대하여 기술해 주십시오. (500) - 499",https://linkareer.com/cover-letter/31424,job_competency
+Q314,"함께 일하고 싶지 않은 사람의 유형에 대해 설명하고, 만약 부득이하게 같이 일하게 되었을 때는 어떻게 할 것인지에 대하여 기술해 주십시오. (500) - 482",https://linkareer.com/cover-letter/31424,etc
+Q315,"한국기술교육대학교가 수행하는 업무를 아는 대로 설명하고, 이 중 본인이 하고 싶은 업무와 그 이유를 기술해 주십시오. (500) - 416",https://linkareer.com/cover-letter/31424,job_competency
+Q316,"수협은행에 입사하고자 하는 이유를 설명하고, 입사 후 이루고자 하는 목표를 작성하시오",https://linkareer.com/cover-letter/31466,motivation
+Q317,금융역량개발을 위한 본인의 활동을 설명하고 이를 기반으로 본인과 적합하다고 생각되는 직무분야 및 판단근거를 구체적으로 작성하시오.,https://linkareer.com/cover-letter/31466,job_competency
+Q318,연구실 경험,https://linkareer.com/cover-letter/31466,etc
+Q319,프로젝트 경험,https://linkareer.com/cover-letter/31466,job_competency
+Q320,"최근 본인이 갈등을 겪었던 사례를 설명하고 그 해결 과정에서 본인의 역할, 극복과정 및 느낀 점 등을 작성하시오.",https://linkareer.com/cover-letter/31466,teamwork
+Q321,위 지원서 내용 이외에 추가로 본인을 소개할 내용을 자유롭게 작성하시오.,https://linkareer.com/cover-letter/31466,creative_free
+Q322,서비스 개발 경험,https://linkareer.com/cover-letter/31466,job_competency
+Q323,학교생활,https://linkareer.com/cover-letter/31468,etc
+Q324,성격의 장/단점,https://linkareer.com/cover-letter/31468,personality
+Q325,직무경험/ 경력사항,https://linkareer.com/cover-letter/31468,etc
+Q326,[경력 및 경험] 입사지원서에 기술한 경력 및 경험(직무관련 기타활동)에 대해 상세히 기술하여 주시기 바랍니다.,https://linkareer.com/cover-letter/31475,job_competency
+Q327,[지원동기 및 조직적합성] 본인이 한국해양수산개발원에 입사지원하게 된 동기와 전문성을 확보하기 위해 노력한 내용을 다음 항목에 따라 구체적으로 작성하여 주십시오.,https://linkareer.com/cover-letter/31475,motivation
+Q328,[의사소통능력] (최근 3년 이내) 타인의 의견과 충돌이 발생했을 때 본인의 생각을 논리적으로 전개하여 타인을 설득했던 경험에 대해 다음 항목에 따라 구체적으로 작성하여 주십시오.,https://linkareer.com/cover-letter/31475,teamwork
+Q329,"[문제해결능력] (최근 3년 이내) 일이 계획대로 진행되지 않았을 때, 끝까지 책임감을 가지고 적극적으로 노력하여 업무를 성공적으로 마무리했던 경험에 대해 다음 항목에 따라 구체적으로 작성하여 주십시오.",https://linkareer.com/cover-letter/31475,problem_solving
+Q330,[자원관리능력] (최근 3년 이내) 주변의 자원을 효율적으로 활용하였던 경험에 대해 다음 항목에 따라 구체적으로 작성하여 주십시오.,https://linkareer.com/cover-letter/31475,etc
+Q331,본인의 성장과정과 이랜드이노플에 지원한 이유를 구체적으로 적어 주십시오. (최대 800자),https://linkareer.com/cover-letter/31495,growth_values
+Q332,"지원 직무와 관련된 노력이나 경험 가운데 지원자님의 강점이 잘 드러나는 사례를 작성해 주시고, 해당 경험과 강점을 활용하여 이랜드이노플에서 달성하고 싶은 목표를 작성해 주세요. (최대 800자) (경험 사례: 프로젝트/대회 참여/공모전/연구, 학습 등)",https://linkareer.com/cover-letter/31495,job_competency
+Q333,"위 질문들에서 표현하지 못했던 내용 중, 지원 직무와 관련된 경험을 작성해 주세요. *분량을 모두 채우지 않으셔도 되며, 없다면 작성하지 않으셔도 됩니다. (최대 2000자)",https://linkareer.com/cover-letter/31495,job_competency
+Q334,사회생활 및 역량,https://linkareer.com/cover-letter/31522,etc
+Q335,장점 및 단점,https://linkareer.com/cover-letter/31522,etc
+Q336,고객이 어느 미디어에서 유입되었는지,https://linkareer.com/cover-letter/31568,etc
+Q337,그러한 고객이 Product를 어떻게 이용하는지,https://linkareer.com/cover-letter/31568,etc
+Q338,Product를 이용하는 고객과의 관계를 끈끈하게 만들 수 있는 방법은 무엇인지,https://linkareer.com/cover-letter/31568,etc
+Q339,배움을 즐기는 인재,https://linkareer.com/cover-letter/31568,etc
+Q340,모비데이즈와 최소 5년을 함께하고 싶은 인재,https://linkareer.com/cover-letter/31568,etc
+Q341,퍼포먼스 마케팅의 전문가로 거듭날 인재,https://linkareer.com/cover-letter/31568,etc
+Q342,"본인의 지원직무를 어떻게 이해하고 있는지 구체적으로 기술하고, 해당 분야에 본인이 적합하다고 판단할 수 있는 근거를 사례 및 경험을 바탕으로 기재해 주세요(글자수 자유)",https://linkareer.com/cover-letter/31584,job_competency
+Q343,목표를 달성하는 과정에서 힘들고 어려운 문제가 발생하였음에도 포기하지 않고 임무를 완수한 사례를 작성해 주세요(글자수 자유),https://linkareer.com/cover-letter/31584,challenge
+Q344,입사 후 포부 및 자기계발 계획(글자수 자유),https://linkareer.com/cover-letter/31584,motivation
+Q345,지원 직무에 대해 본인이 이해하고 있는 내용을 상세하게 기술해 주시기 바랍니다.,https://linkareer.com/cover-letter/31622,job_competency
+Q346,경량 환경에서 암호화 기술의 취약성 및 안전성 연구를 진행한 저에게 있어서 차량 사이버 보안 평가는 저의 역량을 보여줄 수 있는 직무라 생각합니다.,https://linkareer.com/cover-letter/31622,etc
+Q347,지원 직무를 수행함에 있어 본인만의 강점과 핵심역량은 무엇인가요?,https://linkareer.com/cover-letter/31622,job_competency
+Q348,"지원 직무와 관련하여 해당분야의 전문성을 갖추기 위해 노력한 경험을 모두 기술해 주시기 바랍니다. (주요 연구 및 업무 경험, 프로젝트 수행, 수상 이력,",https://linkareer.com/cover-letter/31622,job_competency
+Q349,성장과정 및 가치관,https://linkareer.com/cover-letter/31624,growth_values
+Q350,성격 및 장/단점,https://linkareer.com/cover-letter/31624,personality
+Q351,장점,https://linkareer.com/cover-letter/31624,etc
+Q352,단점,https://linkareer.com/cover-letter/31624,etc
+Q353,자신을 어필할 수 있는 내용,https://linkareer.com/cover-letter/31624,creative_free
+Q354,사회(봉사)활동 경험,https://linkareer.com/cover-letter/31624,etc
+Q355,지원분야와 관련한 본인의 보유 역량,https://linkareer.com/cover-letter/31624,etc
+Q356,직면했던 문제를 극복/해결했던 경험,https://linkareer.com/cover-letter/31624,failure
+Q357,지원분야와 관련한 직무 경험,https://linkareer.com/cover-letter/31624,job_competency
+Q358,논문 투고,https://linkareer.com/cover-letter/31624,etc
+Q359,"[지원동기] 하나금융티아이에 지원하게 된 구체적인 이유는 무엇이며, 입사 후 목표는 무엇인지 기술해 주십시오.",https://linkareer.com/cover-letter/31650,motivation
+Q360,[자기소개] 본인에 대해 자유롭게 기술해 주시기 바랍니다.,https://linkareer.com/cover-letter/31650,creative_free
+Q361,본인이 관심 있는 IT 분야 혹은 관련 경험을 자유롭게 기술해 주십시오.,https://linkareer.com/cover-letter/31650,creative_free
+Q362,성격의 장단점-,https://linkareer.com/cover-letter/31653,personality
+Q363,학교생활 및 해외경험-,https://linkareer.com/cover-letter/31653,etc
+Q364,지원동기 및 입사 후 포부-,https://linkareer.com/cover-letter/31653,motivation
+Q365,성장과정-,https://linkareer.com/cover-letter/31653,growth_values
+Q366,KTR에 지원하시게 된 동기와 직무에 적합한 이유를 작성하여 주십시오.,https://linkareer.com/cover-letter/31659,job_competency
+Q367,직무와 관련된 연구개발 수행 및 관련 활동을 통해 우수한 성과를 창출한 경험을 작성하여 주십시오.,https://linkareer.com/cover-letter/31659,job_competency
+Q368,지원하신 직무에 대한 강점과 이를 활용한 입사 후 목표를 작성하여 주십시오.,https://linkareer.com/cover-letter/31659,job_competency
+Q369,KTR이 나아가야 할 방향성을 한 문장으로 정의하고 기여할 수 있는 방안을 작성하여 주십시오,https://linkareer.com/cover-letter/31659,social_view
+Q370,왜 포스코케미칼에 입사하고 싶은지 다른 기업과의 차별화된 점을 중심으로 기술하시오. 600자,https://linkareer.com/cover-letter/31661,motivation
+Q371,"제한된 자원(시간, 비용, 인력 등)에도 불구하고 도전적인 목표를 달성했던 경험을 구체적으로 기술하시오.600자",https://linkareer.com/cover-letter/31661,challenge
+Q372,최근 이슈가 되는 뉴스를 한 가지 정하여 본인의 입장과 그 이유를 논리적으로 기술하시오. 600자,https://linkareer.com/cover-letter/31661,social_view
+Q373,본인이 갖추고 있는 지원분야에 가장 중요한 직무능력을 중요도 순위로 3가지 나열하고 그 이유에 대하여 구체적으로 기술하시오. 900자,https://linkareer.com/cover-letter/31661,job_competency
+Q374,"석유화학업계의 향후 트렌드를 조망하고, 롯데케미칼이 이러한 변화를 선도하기 위해 본인이 입사 후에 어떻게 회사에 기여하고 싶으신지, 본인의 강점 등 구체적 근거를 포함해 기술해 주세요.*(700자)",https://linkareer.com/cover-letter/31662,social_view
+Q375,지금의 나를 있게 한 가장 중요한 사건에 대해 구체적으로 기술해주세요.*(700자),https://linkareer.com/cover-letter/31662,growth_values
+Q376,"지원하신 직무가 무엇을 하는 일이라고 생각하시는지, 본인의 정의를 기술해 주십시오. 직무수행에 필요한 역량/지식을 갖추기 위해 학업 또는 학업 외적으로 어떤 준비를 하셨는지 구체적 사례 중심으로 작성해 주세요.*(700자)",https://linkareer.com/cover-letter/31662,job_competency
+Q377,"달성하기 어려운 높은 목표를 자율적으로 설정해서 도전해본 경험을 기술해 주세요. 목표 수립과정과 계기, 수행과정에서 겪었던 어려움과 극복을 위해 기울인 노력 등을 구체적으로 작성해 주시기 바랍니다.* (700자)",https://linkareer.com/cover-letter/31662,challenge
+Q378,"본인이 알고 있는 한국공항공사에 관한 내용(국내외 환경변화, 조직특성, 추진업무 등)은",https://linkareer.com/cover-letter/31678,social_view
+Q379,본인이 한국공항공사의 인재상과 직무에 맞는 인재가 되기 위해 어떠한 면에서 준비가,https://linkareer.com/cover-letter/31678,growth_values
+Q380,"집단(학교, 회사, 동아리, 동호회 등)에서 기존보다 더 나은 성과를 창출하기 위해 적극적으로 새로운 방법을 시도하고 성과를 낸 경험에 대해 작성해 주십시오. (300자~800자)",https://linkareer.com/cover-letter/31678,challenge
+Q381,"집단(학교, 회사, 동아리, 동호회 등)에서 집단 내 구성원들의 입장 차이를 이해하고, 이를 중재하기 위해 노력하여 건설적으로 해결한 경험에 대해 아래의 항목에 따라 작성해 주십시오. (각 항목별 300자~800자)",https://linkareer.com/cover-letter/31678,problem_solving
+Q382,"지역사회참여, 사회봉사, 공공활동 등 사회 공공의 가치 실현을 위해 활동했던 경험을",https://linkareer.com/cover-letter/31678,growth_values
+Q383,지원 분야를 선택한 이유에 대하여 기술해주십시오. (600 자) -,https://linkareer.com/cover-letter/31688,motivation
+Q384,지원 분야와 관련한 전문성 확보를 위해 노력한 경험에 대하여 기술해주십시오. (600 자) -,https://linkareer.com/cover-letter/31688,job_competency
+Q385,본인의 역량계발 계획 및 향후 당사에서 펼치고자 하는 포부를 기재하시오. (500 자) - [평가부터 설계까지],https://linkareer.com/cover-letter/31689,motivation
+Q386,ptkorea와 데이터분석 직무 지원 동기,https://linkareer.com/cover-letter/31702,motivation
+Q387,직무 역량을 갖추기 위한 경험,https://linkareer.com/cover-letter/31702,job_competency
+Q388,"CJ ENM 커머스부문(온스타일)에 지원한 동기는 무엇이며, 입사 후 포부에 대해 구체적으로 작성해주세요. (1,500자 이내) ① 지원동기 및 해당직무를 ENM 커머스부문(온스타일)에서 수행하고자 하는 이유 ② 해당 직무 입사 후 성장 포부를 포함하여 작성",https://linkareer.com/cover-letter/31703,motivation
+Q389,"컬리 데이터사이언티스트 인턴 직무에 지원한 동기는 무엇입니까? 또, 앞으로의 경력개발 목표는 어떻게 되나요?",https://linkareer.com/cover-letter/31705,motivation
+Q390,"데이터사이언스와 직/간접적으로 관련된 본인의 경험을 말씀해주세요. (프로젝트, 대외활동, 인턴, 동아리 경험 등)",https://linkareer.com/cover-letter/31705,job_competency
+Q391,"성장과정:가족사항, 학창시절, 교우관계, 생활습관, 자신에게 크게 영향을 미친 사건 등을 포함하여 구체적으로 작성",https://linkareer.com/cover-letter/31710,growth_values
+Q392,실패했던 경험이나 크게 좌절했던 경험과 극복사례는?,https://linkareer.com/cover-letter/31710,failure
+Q393,운용업을 선택하게된 이유와 운용사 중 당사를 선택한 이유,https://linkareer.com/cover-letter/31710,motivation
+Q394,지원한 분야는 어떤 일을 한다고 생각하는가?,https://linkareer.com/cover-letter/31710,job_competency
+Q395,지원분야에 본인이 적합한 이유를 증명하시오.,https://linkareer.com/cover-letter/31710,job_competency
+Q396,"귀하가 가장 중요하게 생각하는 가치관은 무엇이며, 이러한 가치관이 한국철도공사가",https://linkareer.com/cover-letter/31716,growth_values
+Q397,다양한 사람의 의견을 듣고 이를 조율하는 본인만의 노하우와 이러한 노하우를,https://linkareer.com/cover-letter/31716,teamwork
+Q398,현재 한국철도공사에서 제공하는 서비스 중 고객이 더욱 만족할 수 있도록 개선할 수,https://linkareer.com/cover-letter/31716,social_view
+Q399,"앞으로 한국철도공사가 중점적으로 추진해야 하는 사업은 무엇이며, 귀하가 어떠한",https://linkareer.com/cover-letter/31716,social_view
+Q400,가치관 및 직무성장비전,https://linkareer.com/cover-letter/31725,growth_values
+Q401,성격의 강점과 약점,https://linkareer.com/cover-letter/31725,personality
+Q402,**본인이 지원한 직무에 적합한 이유에 대하여 서술해 주시기 바랍니다. (500자 이내)**,https://linkareer.com/cover-letter/31729,job_competency
+Q403,서버 관리,https://linkareer.com/cover-letter/31729,etc
+Q404,데이터베이스 관리,https://linkareer.com/cover-letter/31729,etc
+Q405,네트워크 보안 관리,https://linkareer.com/cover-letter/31729,etc
+Q406,**국내 부동산 경기의 변화에 대하여 본인의 의견을 제시하시오. (500자 이내)**,https://linkareer.com/cover-letter/31729,social_view
+Q407,"**자신의 전문성을 향상시키기 위해 어떤 노력을 했으며, 입사 후 지원분야에 어떻게 활용할 수 있을지 기술해 주시기 바랍니다.(500자 이내)**",https://linkareer.com/cover-letter/31729,motivation
+Q408,KCI 논문 1저자 게재,https://linkareer.com/cover-letter/31729,etc
+Q409,**협업하는 과정에서 자신과 다른 의견을 가진 사람과 의사소통을 통해 문제를 해결했던 경험이 있다면 구체적으로 기술하시오. 경험이 없는 경우 어떻게 해결할지 기술하시오.(500자 이내)**,https://linkareer.com/cover-letter/31729,teamwork
+Q410,지원자님을 표현할 수 있는 해시태그 단어 세 가지로 표현해주세요.,https://linkareer.com/cover-letter/31742,creative_free
+Q411,신입 사원으로써 직무에 임할 포부와 어떤 태도로 직무에 임할지 말씀해 주세요.,https://linkareer.com/cover-letter/31742,motivation
+Q412,"업무 또는 기타 계획 진행 과정에서 어려움에 부딪힌 경험과, 이를 극복하려 노력했던 경험 및 결과에 대해 말씀해 주세요.",https://linkareer.com/cover-letter/31742,failure
+Q413,"SW 직무에서 지원자님의 차별화된 강점이 무엇인지, 이를 바탕으로 본 교육과정 수료 후 현대모비스에 어떻게 기여할 수 있을지 작성해주세요.",https://linkareer.com/cover-letter/31745,job_competency
+Q414,"지원자님께서 공동의 목표를 달성하기 위해 다른 사람들과 힘을 합쳐 노력했던 경험을 구체적으로 기술하고, 그 경험을 통해 배운 점을 작성해주세요.",https://linkareer.com/cover-letter/31745,teamwork
+Q415,지원한 이유와 본인의 꿈(성장 목표)에 대하여 작성해 주세요. (1000자 이내),https://linkareer.com/cover-letter/31753,motivation
+Q416,본인의 특성 및 성격(장점/보완점)을 자유롭게 기술해주세요. (500자 이내),https://linkareer.com/cover-letter/31753,personality
+Q417,"재학 중 활동경험(교내외, 전공 및 개인활동 등)",https://linkareer.com/cover-letter/31773,etc
+Q418,팀원으로서의 본인의 장점,https://linkareer.com/cover-letter/31773,teamwork
+Q419,[My Competency] (700자),https://linkareer.com/cover-letter/31780,etc
+Q420,"지원분야/직무에 대한 지원 동기와, 해당 분야/직무를 위해 어떤 준비를 해왔는지 소개해주세요.",https://linkareer.com/cover-letter/31780,motivation
+Q421,[My Story] (700자),https://linkareer.com/cover-letter/31780,etc
+Q422,[My Vision] (700자),https://linkareer.com/cover-letter/31780,etc
+Q423,LG에너지솔루션에서 이루고 싶은 나만의 꿈과 비전을 소개해주세요.,https://linkareer.com/cover-letter/31780,motivation
+Q424,해당 공고 및 세부 수행직무를 희망하는 이유와 본인이 적합하다고 판단할 수 있는 이유 및 근거를 제시해 주십시오.(1000자),https://linkareer.com/cover-letter/31833,job_competency
+Q425,"본인의 역량을 나타낼 수 있는 주요 전공과목(최대 5개)을 선정하여, 해당 과목에서 습득한 역량 및 성취도(학점)를 기술해 주십시오. ※ 석사과정자는 연구경력 및 세부 전공에 대해 기술해 주십시오.(1000자)",https://linkareer.com/cover-letter/31833,job_competency
+Q426,본인의 경쟁력,https://linkareer.com/cover-letter/31836,job_competency
+Q427,성격 및 생활신조,https://linkareer.com/cover-letter/31836,personality
+Q428,채용 후 직장생활 계획(각오),https://linkareer.com/cover-letter/31836,motivation
+Q429,귀하의 공익지향 경험(봉사활동 등)을 기술해 주십시오. (500자 이내),https://linkareer.com/cover-letter/31841,growth_values
+Q430,"지원분야 업무관련 보유 지식, 경험, 경력 등을 기술해 주십시오. (500자 이내)",https://linkareer.com/cover-letter/31841,job_competency
+Q431,"인재상(창조인, 전문인, 화합인)과 연관 지어 본인의 장단점을 기술하고, 단점의 경우 극복방안을 함께 기술하시오. (500자 이내)",https://linkareer.com/cover-letter/31841,personality
+Q432,"입사 후, 역할·포부에 대해 기술해 주십시오. (500자 이내)",https://linkareer.com/cover-letter/31841,motivation
+Q433,"[지원동기] 하나금융티아이에 지원하게 된 구체적인 이유는 무엇이며, 입사 후 목표는 무엇인지 기술해주십시오",https://linkareer.com/cover-letter/31867,motivation
+Q434,"[자기소개] 본인에 대해 자유롭게 기술해주시기 바랍니다. (최소 500자, 최대 3,000자 입력가능)",https://linkareer.com/cover-letter/31867,creative_free
+Q435,"[역량기술] 경력관련 본인의 역량과 업무경험에 대해 자유롭게 기술해주시기 바랍니다. (최소 500자, 최대 5,000자 입력가능) -",https://linkareer.com/cover-letter/31867,creative_free
+Q436,KB국민은행에 지원하게 된 계기와 입행 후 은행에서 수행하고 싶은 직무 및 그 이유에 대해 기술해 주십시오,https://linkareer.com/cover-letter/31869,motivation
+Q437,공동의 프로젝트를 원활히 달성하기 위해 타인과 협업했던 경험과 그 속에서 발휘됐던 본인만의 협업 방식이 있다면 약술해 주십시오.,https://linkareer.com/cover-letter/31869,teamwork
+Q438,어려운 문제에 직면했을 때 창의적인 아이디어나 도전적인 자세로 극복한 경험에 대해 기술해 주십시오,https://linkareer.com/cover-letter/31869,failure
+Q439,"데이터/AI와 관련된 경력 및 기타 학습(프로젝트, 공모전, 논문, 이수과목 등) 등을 진행한 경험을 서술해 주십시오 나아가 이러한 경험이 직무수행에 있어 어떤 도움이 될 수 있을지에 대해 구체적으로 기술해 주십시오.",https://linkareer.com/cover-letter/31869,job_competency
+Q440,기아에 지원하게 된 동기와 기아의 일원으로서 이루고 싶은 목표를 서술해 주십시오,https://linkareer.com/cover-letter/31874,motivation
+Q441,"지원직무와 관련한 경험 및 역량, 관심사항 등을 토대로 자신을 가장 잘 설명할 수 있는 내용에 대해 서술해 주십시오",https://linkareer.com/cover-letter/31874,job_competency
+Q442,2학년부터 꾸준히 공모전에 참가해 고객층을 분석하고 해당 산업이 가진 문제점을 도출해 서비스를 기획하는 경험을 하며 세 번의 수상을 할 수 있었습니다. 이러한 기획 경험에 다양한 부서와 ‘함께’ 공동의 목표를 향해 나아갈 수 있도록 돕는 기획자가 되겠습니다.,https://linkareer.com/cover-letter/31874,teamwork
+Q443,신한카드를 선택한 이유와 그에 따라 기대하고 있는 10년 뒤 본인과 신한카드의 모습은?,https://linkareer.com/cover-letter/31875,motivation
+Q444,"지원 분야와 관련하여 본인이 충분한 역량 또는 잠재력을 갖고 있다고 어필할 수 있는 근거를 경험(인턴, 아르바이트, 수행과제 등) 또는 사례와 함께 이야기 해 주세요",https://linkareer.com/cover-letter/31875,job_competency
+Q445,살면서 가장 소속감을 가졌던 조직(or커뮤니티)의 발전을 위해 열의를 다했던 경험과 이를 통해 어떤 것을 얻을 수 있었는지 기술해주세요,https://linkareer.com/cover-letter/31875,challenge
+Q446,"본인이 생각하는 신한카드 비즈니스의 경쟁상대는 무엇이며, 그 이유를 신한카드의 VISION 관점에서 비교 기술해주세요",https://linkareer.com/cover-letter/31875,social_view
+Q447,"[지원동기] 우리에프아이에스를 지원한 이유와 입사 후 회사에서 어떻게 성장해 나갈 것인지, 이를 위한 구체적인 계획(노력)에 대해서 말씀해주세요",https://linkareer.com/cover-letter/31876,motivation
+Q448,"[트렌드] 최근 금융IT 관련 이슈는 어떤 것이 있는지 주제 한가지를 선택하고 본인의 견해를 말씀해주세요 - “빅테크, 금융권의 연계사업 확장”",https://linkareer.com/cover-letter/31876,social_view
+Q449,"[서비스] 우리금융그룹 서비스(우리WON뱅킹, 카드, 멤버스 등 앱 사용 또는 지점 방문 등)를 사용하면서 불편하게 느꼈던 점을 말씀해주시고, 본인이라면 이를 어떻게 개선할 것인지 말씀해주세요 - “UI/UX 개선”",https://linkareer.com/cover-letter/31876,social_view
+Q450,"[기타] 입사지원서와 자기소개서를 통해 이야기하지 못한 자신만의 장점, 특이한 경험 등의 이야기를 남겨주세요 - (500)",https://linkareer.com/cover-letter/31876,creative_free
+Q451,자기소개,https://linkareer.com/cover-letter/31878,creative_free
+Q452,보완점,https://linkareer.com/cover-letter/31878,personality
+Q453,성장과정 (글자수 제한없음),https://linkareer.com/cover-letter/31887,growth_values
+Q454,성격의 장단점 (제한없음),https://linkareer.com/cover-letter/31887,personality
+Q455,지원동기 및 향후 포부(제한없음),https://linkareer.com/cover-letter/31887,motivation
+Q456,"우리 회사의 인재상 중 본인에게 가장 어울리는 인재상을 고르고, 해당 인재상을 통해 성취감을 느꼈던 경험을 기술하십시오 (600)",https://linkareer.com/cover-letter/31888,growth_values
+Q457,"지원한 직무에 필요한 역량 중 본인이 가진 강점을 기술하고, 그 강점을 유지 또는 향상시키기 위해 어떤 것들을 했는지 설명하십시오. (600)",https://linkareer.com/cover-letter/31888,job_competency
+Q458,"우리 회사에 지원하게 된 동기는 무엇이며, 입사 후 어떻게 성장해 나갈 것인지 기술하십시오. (600)",https://linkareer.com/cover-letter/31888,motivation
+Q459,"[직무 관련 경험] 교과목, 동아리, 프로젝트 등을 통해 실제로 구현과정에 참여했던 직무 관련 경험을 서술하고, 그 과정에서 드러난 본인의 강점분야 또는 관심분야를 작성하시오.",https://linkareer.com/cover-letter/31902,job_competency
+Q460,※ 여러 가지 경험을 서술해도 좋습니다. (주어진 범위 내에서 자유롭게 작성),https://linkareer.com/cover-letter/31902,etc
+Q461,"[전공지식 / 학습이력 등] 중점적으로 수강한 전공과목의 세부 분야(예를 들어, 전자공학 내 통신분야)와 이수한 주요 과목명과, 능숙하게 활용할 수 있는 skill을 작성하시오.",https://linkareer.com/cover-letter/31902,job_competency
+Q462,윈스에 지원한 동기와 해당 직무에서의 최종 목표를 기술해 주십시오. (800),https://linkareer.com/cover-letter/31920,motivation
+Q463,본인이 스트레스 받는 상황과 스트레스 해소법을 구체적으로 기술해 주십시오. (800),https://linkareer.com/cover-letter/31920,personality
+Q464,"직무와 관련된 본인의 역량을 프로젝트, 대외활동 등 경험을 사례로 들어 기술해 주십시오. (800)",https://linkareer.com/cover-letter/31920,job_competency
+Q465,"현대오토에버의 해당 직무에 지원한 이유와 앞으로 현대오토에버에서 키워 나갈 커리어 계획을 작성해주시기 바랍니다. (최소 500자, 최대 1,000자 입력가능)",https://linkareer.com/cover-letter/31967,motivation
+Q466,프로그래밍 및 소프트웨어 개발,https://linkareer.com/cover-letter/31967,etc
+Q467,차량 시스템 이해,https://linkareer.com/cover-letter/31967,etc
+Q468,문제 해결 능력,https://linkareer.com/cover-letter/31967,problem_solving
+Q469,커뮤니케이션 및 팀워크,https://linkareer.com/cover-letter/31967,teamwork
+Q470,해당 공고 및 세부 수행직무를 희망하는 이유와 본인이 적합하다고 판단할 수 있는 이유 및 근거를 제시해 주십시오. (1000자),https://linkareer.com/cover-letter/31970,job_competency
+Q471,"본인의 역량을 나타낼 수 있는 주요 전공과목(최대 5개)을 선정하여, 해당 과목에서 습득한 역량 및 성취도(학점)를 기술해 주십시오. ※ 석사과정자는 연구경력 및 세부 전공에 대해 기술해 주십시오. (1000자)",https://linkareer.com/cover-letter/31970,job_competency
+Q472,데이터베이스 A+,https://linkareer.com/cover-letter/31970,etc
+Q473,알고리즘 A+,https://linkareer.com/cover-letter/31970,etc
+Q474,소프트웨어 공학 A+,https://linkareer.com/cover-letter/31970,etc
+Q475,마케팅 A+,https://linkareer.com/cover-letter/31970,etc
+Q476,한국마사회에 입사 후 가장 수행하고 싶은 일을 이유와 함께 기술하고 이 일을 통해 주변으로부터 어떤 평가를 받는 직원이 되고 싶은지 기술하여 주십시오.,https://linkareer.com/cover-letter/31974,motivation
+Q477,"타인과 함께 일을 할 때 가장 중요하게 생각하는 점을 이유와 함께 설명하고, 그 부분이 맞지 않아 갈등이 발생했던 사례를 자세하게 기술하여 주십시오.",https://linkareer.com/cover-letter/31974,teamwork
+Q478,최근 국내외 환경변화 중 한국마사회에 가장 큰 영향을 미치는 변화를 지원한 분야의 관점에서 기술하고 그 대응을 위해 본인이 어떤 역할을 할 수 있는지 보유한 직무역량을 중심으로 기술하여 주십시오.,https://linkareer.com/cover-letter/31974,social_view
+Q479,주어진 과제를 정해진 절차에 따라 공정하게 처리했지만 편법을 사용한 타인에 비해 결과가 좋지 않았던 경험을 기술하고 그러한 상황이 다시 발생한다면 어떻게 할 것인지 기술하여 주십시오.,https://linkareer.com/cover-letter/31974,etc
+Q480,어떤 사안에 대해 본인과 의견이 다른 사람과 우호적 관계를 형성한 경험이 있다면 그 과정과 결과를 포함하여 기술하여 주십시오.,https://linkareer.com/cover-letter/31975,teamwork
+Q481,지금까지 약속과 원칙을 지켜 상대방과 신뢰를 형성하고 유지했던 경험에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/31975,teamwork
+Q482,우리원에 지원한 동기 및 실천하고자 하는 목표를 우리원의 핵심가치 중 한 가지와 연계하여 기술하여 주십시오.,https://linkareer.com/cover-letter/31975,growth_values
+Q483,"지원한 직무와 관련한 활동 또는 경험, 본인의 역할, 주요 성과 등을 설명하고, 해당 성과가 현업에서 어떻게 활용될 수 있는지 기술하여 주십시오.",https://linkareer.com/cover-letter/31975,etc
+Q484,나의 성격,https://linkareer.com/cover-letter/31978,etc
+Q485,해당 공고 및 세부 수행직무를 희망하는 이유와 본인이 적합하다고 판단할 수 있는 이유 및 근거를 제시해 주십시오.(1000),https://linkareer.com/cover-letter/31989,job_competency
+Q486,자작차 동아리,https://linkareer.com/cover-letter/31989,etc
+Q487,진동 연구실 학부 인턴,https://linkareer.com/cover-letter/31989,etc
+Q488,H-Mobility,https://linkareer.com/cover-letter/31989,etc
+Q489,"본인의 역량을 나타낼 수 있는 주요 전공과목(최대 5개)을 선정하여, 해당 과목에서 습득한 역량 및 성취도(학점)를 기술해 주십시오. ※ 석사과정자는 연구경력 및 세부 전공에 대해 기술해 주십시오 (1000)",https://linkareer.com/cover-letter/31989,job_competency
+Q490,귀하가 지원한 직무와 관련하여 구체적으로 노력하여 성과를 이룬 구체적인 사례를 제시하시오.(600),https://linkareer.com/cover-letter/32001,job_competency
+Q491,단체나 모임에서의 문제해결을 위하여 창의적인 ‘아이디어’나 ‘제안’을 하여 좋은 평판을 얻은 경험을 소개하시오.(600),https://linkareer.com/cover-letter/32001,problem_solving
+Q492,상대방과 원칙이나 가치관이 달라서 대립하는 경우에 상대방을 잘 설득하여 문제를 원만히 해결했던 경험을 소개하시오.(600),https://linkareer.com/cover-letter/32001,teamwork
+Q493,"직장인으로서 ‘직업윤리’가 왜 중요한지 귀하의 소신을 소개하고, 이러한 소신을 잘 나타내는 경험을 소개하시오.(600)",https://linkareer.com/cover-letter/32001,growth_values
+Q494,조직의 일원으로서 ‘리더십’이나 ‘팔로우십’을 발휘하여 어려움을 극복하고 해결한 경험이나 사례를 작성하시오.(600),https://linkareer.com/cover-letter/32001,failure
+Q495,현상 : 현상액을 55% 비율로 희석 후 현상시간 10초에서 3초까지 단축,https://linkareer.com/cover-letter/32037,etc
+Q496,에칭 : RF 파워 70%로 줄이고 시간 2분까지 단축,https://linkareer.com/cover-letter/32037,etc
+Q497,회사를 선택하는 기준과 농심에 지원한 이유에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/32040,motivation
+Q498,지원한 직무분야와 관련하여 가장 중요하다고 생각하는 역량 2가지와 그 이유에 대해 기술해 주십시오.,https://linkareer.com/cover-letter/32040,job_competency
+Q499,회로 체크 2. 센서 작동 확인 3. 부품 고장 확인,https://linkareer.com/cover-letter/32040,etc
+Q500,"지원한 직무분야의 전문성을 키우기 위해 어떠한 노력과 준비를 해왔으며, 어떻게 농심에 기여할 수 있는지 기술해 주십시오.",https://linkareer.com/cover-letter/32040,job_competency

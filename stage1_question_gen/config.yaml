@@ -1,0 +1,27 @@
+# Stage 1 - CPU 전용 소형 모델 설정
+# 8B/Unsloth/CUDA 대신 Transformers 기반 소형 한국어 GPT 모델 사용
+
+model:
+  base_model: "skt/kogpt2-base-v2"   # 약 125M급 한국어 GPT-2 계열. CPU에서 실행 가능하지만 느릴 수 있음.
+  max_seq_length: 256
+  max_new_tokens: 80
+
+train:
+  epochs: 25
+  batch_size: 8
+  grad_accumulation: 1
+  learning_rate: 5.0e-5
+  val_ratio: 0.1
+  seed: 42
+
+data:
+  train_csv: "../data/stage1/train.csv"
+  test_csv:  "../data/stage1/test.csv"
+
+output:
+  dir: "./models/best_cpu"
+
+eval:
+  cosine_min:   0.75
+  cosine_goal:  0.80
+  valid_threshold: 0.70

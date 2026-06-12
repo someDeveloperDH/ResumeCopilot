@@ -1,0 +1,36 @@
+# ═══════════════════════════════════════════════════════════════
+# Stage 3 - Multi-task 분석 모델 학습/평가 설정 (CPU 소형 모델 버전)
+# CPU 환경에서는 ModernBERT-base 대신 작은 KoELECTRA-small 사용
+# ═══════════════════════════════════════════════════════════════
+
+model:
+  name: "monologg/koelectra-small-v3-discriminator"
+  max_seq_length: 512
+
+jobs:
+  classes:
+    - backend
+    - ai_ml
+    - product
+
+train:
+  epochs: 40
+  batch_size: 16
+  learning_rate: 5.0e-5
+  val_ratio: 0.1
+  seed: 42
+  freeze_encoder: false
+  num_workers: 0
+
+data:
+  train_csv: "../data/stage3/train.csv"
+  test_csv:  "../data/stage3/test.csv"
+
+output:
+  dir: "./models/best"
+
+eval:
+  mae_threshold:     10
+  rmse_threshold:    15
+  accuracy_threshold:  0.75
+  f1_threshold:        0.70

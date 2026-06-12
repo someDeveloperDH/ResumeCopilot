@@ -1,0 +1,48 @@
+# CLI 런타임 설정 (test4 통합본)
+# - interviewer/rewrite/memory/dashboard : jintae_v2 cli/config.yaml 기반
+# - session/consistency : jinyoung_v2 cli/main.py의 모듈 상수를 설정값으로 승격
+# - models/agents : Orchestrator-Subagent 모델 티어 설정 (스마트=한국어 파인튜닝 LLM,
+#   light/specialized=각 서브에이전트가 기존에 쓰던 모델 그대로)
+
+models:
+  smart:
+    provider: "ollama"
+    base_url: "http://localhost:11434"
+    model: "eeve-korean-10.8b"   # ollama create로 등록한 한국어 파인튜닝 모델 (SOLAR-10.7B 기반)
+    temperature: 0.3
+    max_tokens: 900
+    timeout_seconds: 240
+    allow_rule_fallback: true
+
+agents:
+  question: light          # QuestionAgent     — 기존 생성 모델 (Llama-3.1-8B-4bit / KoGPT2)
+  interviewer: smart        # InterviewerAgent  — models.smart (한국어 파인튜닝 LLM)
+  coach: smart               # CoachAgent        — models.smart (한국어 파인튜닝 LLM)
+  analysis: specialized       # AnalysisAgent     — ModernBERT/KoELECTRA 멀티태스크
+  consistency: specialized    # ConsistencyAgent  — NLI(mDeBERTa) + SBERT(KR-SBERT)
+
+input:
+  seed_threshold_chars: 30
+  short_threshold_chars: 120
+  long_threshold_chars: 500
+  min_dump_chars: 10
+
+interviewer:
+  max_followup_questions: 1
+  retry_delta_threshold: 0.1
+  max_retry_per_question: 1
+
+rewrite:
+  auto_target_length: true
+  short_target_chars: 500
+  default_target_chars: 600
+  long_target_chars: 900
+  preserve_long_answer: true
+
+memory:
+  enable_seed_storage: true
+  enable_semantic_search: true
+  max_recommendations: 3
+
+dashboard:
+  show_readiness_map: true
