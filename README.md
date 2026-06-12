@@ -1,4 +1,4 @@
-# 🧭 하루 1문답 — AI 자기소개서 코칭 CLI
+# 🧭 하루 1문답 — AI Agentic 자기소개서 코칭 CLI
 
 > IT/AI 직무 취업준비생을 위한 **Orchestrator-Subagent 기반** 자기소개서 셀프 트레이닝 CLI
 > 매일 질문 1개 → AI 분석(intent_score/적합 직무) → STAR 코칭 → 꼬리질문 인터뷰 → 일관성 검사 → 세션 저장
