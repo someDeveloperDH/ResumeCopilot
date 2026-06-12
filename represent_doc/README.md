@@ -26,7 +26,7 @@
 | 방식 | CLI 기반 1인 세션, 로컬 실행 (CPU/GPU 자동 분기) |
 | 핵심 아이디어 | 5개의 역할별 AI 서브에이전트(`AgentResult[T]` 공통 계약)가 질문 생성 → 분석 → STAR 코칭 → 꼬리질문 인터뷰 → 일관성 검사를 순서대로 수행 |
 
-자세한 문제 배경 / 해결 방식 / 평가 설계는 [`represent_doc/PROJECT_REPORT.md`](./represent_doc/PROJECT_REPORT.md) 참고.
+자세한 문제 배경 / 해결 방식 / 평가 설계는 [`PROJECT_REPORT.md`](./PROJECT_REPORT.md) 참고.
 
 ---
 
@@ -134,7 +134,7 @@ test4/
 │       ├── analysis_agent.py
 │       └── consistency_agent.py
 │
-├── represent_doc/                # 발표용 정리 자료
+├── represent_doc/                # 발표용 정리 자료 (본 폴더)
 │   ├── README.md
 │   └── PROJECT_REPORT.md
 │
@@ -234,7 +234,7 @@ python cli/main.py --history   # 저장된 세션 기록 조회
 | baseline | 3.11 | 3.82 | 0.267 | 0.140 |
 | finetuned | 7.55 | 9.40 | 0.533 | 0.533 |
 
-- **결론**: 분류(suitable_job)는 큰 개선(F1-macro 0.140→0.533). 회귀(intent_score)는 MAE/RMSE가 오히려 악화(3.11→7.55 / 3.82→9.40)되어 사실상 학습되지 않음 — CLI에서는 `AnalysisAgent`가 회귀값이 `<=0`일 때 rule 기반(`estimate_score`)으로 보정. 상세 원인/대응은 [`represent_doc/PROJECT_REPORT.md`](./represent_doc/PROJECT_REPORT.md#14-진행-중-문제점--해결-방법) 참고.
+- **결론**: 분류(suitable_job)는 큰 개선(F1-macro 0.140→0.533). 회귀(intent_score)는 MAE/RMSE가 오히려 악화(3.11→7.55 / 3.82→9.40)되어 사실상 학습되지 않음 — CLI에서는 `AnalysisAgent`가 회귀값이 `<=0`일 때 rule 기반(`estimate_score`)으로 보정. 상세 원인/대응은 [`PROJECT_REPORT.md`](./PROJECT_REPORT.md#14-진행-중-문제점--해결-방법) 참고.
 
 ### Stage 4 — 꼬리질문(+질문) 통합 생성
 
@@ -251,5 +251,5 @@ python cli/main.py --history   # 저장된 세션 기록 조회
 
 ## 📄 참고 자료
 
-- [`represent_doc/PROJECT_REPORT.md`](./represent_doc/PROJECT_REPORT.md) — 문제 배경, 해결 방식, 사용자 플로우, 데이터 수집/가공, 전체 아키텍처, 기술 스택, 단계별 모델 설계/평가, 핵심 기능, 시연 재현, 문제점/한계점/향후 계획 전체 정리
-- [`MERGE_NOTES.md`](./MERGE_NOTES.md) — 3개 브랜치(test3/jintae_v2/jinyoung_v2) 통합 내역
+- [`PROJECT_REPORT.md`](./PROJECT_REPORT.md) — 문제 배경, 해결 방식, 사용자 플로우, 데이터 수집/가공, 전체 아키텍처, 기술 스택, 단계별 모델 설계/평가, 핵심 기능, 시연 재현, 문제점/한계점/향후 계획 전체 정리
+- `../README.md`, `../MERGE_NOTES.md` — 프로젝트 루트의 실행 가이드 및 3개 브랜치(test3/jintae_v2/jinyoung_v2) 통합 내역
