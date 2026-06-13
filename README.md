@@ -223,7 +223,6 @@ python cli/main.py --history   # 저장된 세션 기록 조회
 | baseline | 0.485 | 0.00 |
 | finetuned | 0.671 | 0.54 |
 
-- **결론**: Cosine 0.485→0.671로 개선, `valid_ratio` 0→0.54로 "역량에 맞는 질문" 생성이 절반 이상 안정화. Cosine은 목표(cosine_goal=0.80) 미달 — 데이터 규모(500건) 한계.
 
 ### Stage 3 — 분석 (intent_score / suitable_job)
 
@@ -234,7 +233,7 @@ python cli/main.py --history   # 저장된 세션 기록 조회
 | baseline | 3.11 | 3.82 | 0.267 | 0.140 |
 | finetuned | 7.55 | 9.40 | 0.533 | 0.533 |
 
-- **결론**: 분류(suitable_job)는 큰 개선(F1-macro 0.140→0.533). 회귀(intent_score)는 MAE/RMSE가 오히려 악화(3.11→7.55 / 3.82→9.40)되어 사실상 학습되지 않음 — CLI에서는 `AnalysisAgent`가 회귀값이 `<=0`일 때 rule 기반(`estimate_score`)으로 보정. 상세 원인/대응은 [`represent_doc/PROJECT_REPORT.md`](./represent_doc/PROJECT_REPORT.md#14-진행-중-문제점--해결-방법) 참고.
+
 
 ### Stage 4 — 꼬리질문(+질문) 통합 생성
 
@@ -245,7 +244,6 @@ python cli/main.py --history   # 저장된 세션 기록 조회
 | baseline | 0.247 | 0.373 |
 | finetuned | 0.539 | 1.000 |
 
-- **결론**: `open_question_ratio` 0.373→1.000, Cosine 0.247→0.539로 개선 — 파인튜닝 후 생성된 꼬리질문이 전부 개방형이며 의미상 정답에 더 가까워짐. 다만 Cosine은 목표(cosine_threshold=0.60)에 근소하게 미달.
 
 ---
 
